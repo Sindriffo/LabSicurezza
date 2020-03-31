@@ -1,2 +1,0 @@
-# LabSicurezza
-Repository progetto
