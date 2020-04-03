@@ -1,0 +1,2 @@
+module MyTravelsHelper
+end
