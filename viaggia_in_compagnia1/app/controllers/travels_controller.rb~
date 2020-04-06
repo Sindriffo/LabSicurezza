@@ -12,10 +12,6 @@ class TravelsController < ApplicationController
 		render html: 'creating new travel'
 	end
 
-	def update
-		render html: 'editing a travel'
-	end
-
 	def destroy
 		render html: 'deleting a travel'
 	end
