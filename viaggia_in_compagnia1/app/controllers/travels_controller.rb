@@ -1,11 +1,21 @@
 class TravelsController < ApplicationController
-
+	skip_before_action :verify_authenticity_token
+	
 	def index
-		render html: 'listing all travels'
+		@travels = Travel.all
 	end
 
 	def show
-		render html: 'showing a travel'
+		id = params[:id]
+		if Travel.exists?(id)
+			@travel = Travel.find(id)
+		else
+			render html: 'Travel does not exit'
+		end
+	end
+
+	def new
+		render html: 'crating new travel'
 	end
 
 	def create
@@ -13,7 +23,7 @@ class TravelsController < ApplicationController
 	end
 
 	def update
-		render html: 'editing a travel'
+
 	end
 
 	def destroy
