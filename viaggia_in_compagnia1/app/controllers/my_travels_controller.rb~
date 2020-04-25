@@ -20,7 +20,7 @@ class MyTravelsController < ApplicationController
 		end
 
 		def update
-			render html: 'updating a travel'
+			render html : 'updating a travel'
 		end
 
 		def destroy

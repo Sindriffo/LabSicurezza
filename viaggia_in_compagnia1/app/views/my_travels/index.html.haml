@@ -1,0 +1,68 @@
+%h1 I miei Viaggi
+
+
+%h2 Viaggi come passeggero
+%table#my_travels
+	%thead
+		%tr
+			%th Nome Utente
+			%th Data
+			%th Partenza
+			%th Arrivo
+			%th Dettagli
+    
+
+	%tbody
+		- @my_travels.each do |my_travel|
+			%tr
+				%td= my_travel.Nome
+				%td= my_travel.Data
+				%td= my_travel.Partenza
+				%td= my_travel.Destinazione
+				%td= link_to "Dettagli Viaggio", travel_path(travel) 
+
+
+%h2 Viaggi come autista
+%table#my_travels
+	%thead
+		%tr
+			%th Nome Utente
+			%th Data
+			%th Partenza
+			%th Arrivo
+			%th Dettagli
+    
+
+	%tbody
+		- @my_travels.each do |my_travel|
+			%tr
+				%td= my_travel.Nome
+				%td= my_travel.Data
+				%td= my_travel.Partenza
+				%td= my_travel.Destinazione
+				%td= link_to "Dettagli Viaggio", travel_path(travel) 
+
+
+%h2 Viaggi passati
+%table#my_travels
+	%thead
+		%tr
+			%th Nome Utente
+			%th Data
+			%th Partenza
+			%th Arrivo
+			%th Dettagli
+    
+
+	%tbody
+		- @my_travels.each do |my_travel|
+			%tr
+				%td= my_travel.Nome
+				%td= my_travel.Data
+				%td= my_travel.Partenza
+				%td= my_travel.Destinazione
+				%td= link_to "Dettagli Viaggio", travel_path(travel) 
+
+
+
+  

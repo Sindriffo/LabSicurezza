@@ -3,5 +3,8 @@ Rails.application.routes.draw do
 
 	resources :travels
 
+
+	resources :my_travels
+
 	
 end
