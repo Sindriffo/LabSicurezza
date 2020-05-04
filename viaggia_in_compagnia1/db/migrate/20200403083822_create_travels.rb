@@ -1,7 +1,8 @@
 class CreateTravels < ActiveRecord::Migration[5.1]
   def change
     create_table :travels do |t|
-      t.string :nome
+      t.references 'user'
+            
       t.string :citta_partenza
       t.string :citta_arrivo
       t.date :data
@@ -9,10 +10,9 @@ class CreateTravels < ActiveRecord::Migration[5.1]
       t.time :ora_arrivo
       t.string :via_partenza
       t.string :via_arrivo
-      t.string :telefono
-      t.string :email
       t.float :prezzo
       t.integer :posti_disponibili
+      
 
       t.timestamps
     end

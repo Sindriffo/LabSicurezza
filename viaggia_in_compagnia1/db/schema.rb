@@ -12,17 +12,19 @@
 
 ActiveRecord::Schema.define(version: 20200403083822) do
 
-  create_table "my_travels", force: :cascade do |t|
-    t.string "Nome"
-    t.string "Partenza"
-    t.string "Destinazione"
-    t.date "Data"
+  create_table "joinedtravels", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "travel_id"
+    t.integer "rating"
+    t.text "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["travel_id"], name: "index_joinedtravels_on_travel_id"
+    t.index ["user_id"], name: "index_joinedtravels_on_user_id"
   end
 
   create_table "travels", force: :cascade do |t|
-    t.string "nome"
+    t.integer "user_id"
     t.string "citta_partenza"
     t.string "citta_arrivo"
     t.date "data"
@@ -30,19 +32,20 @@ ActiveRecord::Schema.define(version: 20200403083822) do
     t.time "ora_arrivo"
     t.string "via_partenza"
     t.string "via_arrivo"
-    t.string "telefono"
-    t.string "email"
     t.float "prezzo"
     t.integer "posti_disponibili"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_travels_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "Nome"
-    t.string "Cognome"
-    t.string "Email"
-    t.string "Password"
+    t.string "nome"
+    t.string "cognome"
+    t.string "email"
+    t.string "telefono"
+    t.string "password"
+    t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,8 +1,19 @@
 class TravelsController < ApplicationController
-	skip_before_action :verify_authenticity_token
+	# skip_before_action :verify_authenticity_token
 	
 	def index
-		@travels = Travel.all
+		id = params[:format]
+		if id != nil
+			redirect_to travels_path()
+		end
+
+		id = session[:user_id]
+		if User.exists?(id)
+			@user = User.find(id)
+			@travels = Travel.where('travels.user_id != ?', @user.id)
+		else
+			render html: 'Error! Unknown User'
+		end
 	end
 
 	def show
@@ -15,11 +26,18 @@ class TravelsController < ApplicationController
 	end
 
 	def new
-		render html: 'crating new travel'
 	end
 
 	def create
-		render html: 'creating new travel'
+		@travel = Travel.new(params[:travel].permit!) 
+		@travel.user_id = session[:user_id]
+		if @travel.save
+            flash[:notice] = "Travel was added" #"Movie #{@movie.title} was added"
+            redirect_to users_path
+        else
+            flash[:notice] = @travel.errors.full_messages
+            redirect_to users_path
+        end
 	end
 
 	def update
@@ -27,7 +45,10 @@ class TravelsController < ApplicationController
 	end
 
 	def destroy
-		render html: 'deleting a travel'
+		id = params[:id]
+		@travel = Travel.find(id)
+		@travel.destroy
+		redirect_to user_joinedtravels_path(User.find(session[:user_id]))
 	end
 	
 end

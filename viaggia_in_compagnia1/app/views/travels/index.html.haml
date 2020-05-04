@@ -15,7 +15,7 @@
   %tbody
     - @travels.each do |travel|
       %tr
-        %td= travel.nome
+        %td= travel.user.nome
         %td= travel.data
         %td= travel.citta_partenza
         %td= travel.citta_arrivo
@@ -24,4 +24,4 @@
           = "€"
         %td= travel.posti_disponibili
         %td= link_to "Dettagli Viaggio", travel_path(travel) 
-        %td= link_to "Aggiungi"
+        %td= link_to "Aggiungi", new_user_joinedtravel_path(travel)

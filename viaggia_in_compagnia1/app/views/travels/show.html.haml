@@ -1,9 +1,25 @@
-%h2 Dettagli Viaggio
+%h1 Dettagli Viaggio
 
-%ul#details
+%h2 Utente
+%ul#user
   %li
     %strong Nome:
-    = @travel.nome
+    = @travel.user.nome
+  %li
+    %strong Cognome:
+    = @travel.user.cognome
+  %li
+    %strong Email:
+    = @travel.user.email
+  %li
+    %strong Telefono:
+    = @travel.user.telefono
+  %li
+    %strong Rating:
+    = @travel.user.rating
+
+%h2 Viaggio
+%ul#details
   %li
     %strong Città di partenza:
     = @travel.citta_partenza
@@ -25,12 +41,6 @@
   %li
     %strong Via di arrivo:
     = @travel.via_arrivo
-  %li
-    %strong Telefono:
-    = @travel.telefono
-  %li
-    %strong Email:
-    = @travel.email
   %li
     %strong Prezzo:
     = @travel.prezzo

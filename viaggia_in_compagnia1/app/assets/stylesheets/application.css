@@ -67,6 +67,36 @@ html, body {
     padding: 4px;
     text-align: left;
   }
+  table#users {
+    margin: 10px;
+    border-collapse: collapse;
+    width: 100%;
+    border-bottom: 2px solid black;
+  }
+  table#users th {
+    border: 2px solid white;
+    font-weight: bold;
+    background-color: wheat;
+  }
+  table#users th, table#users td {
+    padding: 4px;
+    text-align: left;
+  }
+  table#joinedtravels {
+    margin: 10px;
+    border-collapse: collapse;
+    width: 100%;
+    border-bottom: 2px solid black;
+  }
+  table#joinedtravels th {
+    border: 2px solid white;
+    font-weight: bold;
+    background-color: wheat;
+  }
+  table#joinedtravels th, table#joinedtravels td {
+    padding: 4px;
+    text-align: left;
+  }
   #notice, #warning {
     background: rosybrown;
     margin: 1em 0;

@@ -1,0 +1,12 @@
+%h1 Admin Page
+
+%table#travels
+	%tbody
+		%tr
+			%td= link_to ("Profilo") 
+		%tr
+			%td= link_to ("Lista viaggi"), travels_path()
+		%tr
+			%td= link_to ("Lista utenti"), users_path()
+		%tr
+			%td= link_to ("Logout"), logout_path() 
