@@ -1,6 +1,6 @@
 class TravelsController < ApplicationController
 	# skip_before_action :verify_authenticity_token
-	
+
 	def index
 		id = params[:format]
 		if id != nil
@@ -8,11 +8,26 @@ class TravelsController < ApplicationController
 		end
 
 		id = session[:user_id]
-		if User.exists?(id)
+		if User.exists?(id)				
 			@user = User.find(id)
-			@travels = Travel.where('travels.user_id != ?', @user.id)
-		else
-			render html: 'Error! Unknown User'
+
+			#All travels created from other users  
+			@other_user_travels = Travel.where('travels.user_id != ?', @user.id).where('travels.data >= ?', DateTime.now)
+			
+			#All travels the user joined 
+			@joined_travels = Travel.joins(:joinedtravels).where('joinedtravels.user_id == ?', @user.id)
+			 
+			
+			@travels = []			
+			@other_user_travels.each do |travel|
+				if !(@joined_travels.include? travel)
+					@travels << travel
+				end
+			end
+
+			#Future NOT joined travels 
+			# @future_travels = Travel.where('travels.user_id != ?', @user.id).where('travels.data >= ?', DateTime.now)
+			# @travels = @future_travels.left_joins(:joinedtravels).where('joinedtravels.user_id != ? OR joinedtravels.user_id is null', @user.id)
 		end
 	end
 
