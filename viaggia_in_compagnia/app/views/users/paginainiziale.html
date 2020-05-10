@@ -1,0 +1,85 @@
+<html>
+<head>
+<style>
+#m{
+    margin-left: 40%;
+    margin-right: 50%;
+    margin-top: 10%;
+    width: 400px;  
+    height: 100px;
+    background-color:ghostwhite;
+    border:solid 2px green;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+}
+
+#p{
+
+    margin-left: 40%;
+    margin-right: 50%;
+    margin-top: 5%;
+    width: 400px;  
+    height: 100px;
+    background-color: ghostwhite;
+    border:solid 2px red;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+     border-radius: 20px;
+    
+}
+
+#v{
+margin-left: 40%;
+margin-right: 50%;
+margin-top: 5%;
+width: 400px;  
+height: 100px;
+background-color: ghostwhite;
+border:solid 2px blue;
+-moz-border-radius: 20px;
+-webkit-border-radius: 20px;
+border-radius: 20px;
+}
+
+.botton_up{
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    width: 200px;  
+    height: 50px;
+    background-color: blue;
+}
+
+l{
+    color: white;
+}
+
+pr{
+    color: white;
+}
+
+d{
+  color: blue;
+  font-size: xx-large;
+}
+
+h{
+    color: green;
+    font-size: xx-large;
+}
+
+g{
+    color: red;
+    font-size: xx-large;
+}
+</style>
+</head>
+<body>
+<button type="button" class="botton_up"><a href="logout_path()"><l>Logout</l></a></button>
+<button type="button" class="button_up"><a href="user_path(@user)"><p>Profilo</p></a></button>    
+<button type="button" id="m"><a href="user_joinedtravels(@user)"><d>i miei viaggi</d></a></button>
+<button type="button" id="p"><a href="new_travel_path()"><h>proponi offerta</h></a></button>
+<button type="button" id="v"><a href=travels_path(@user)"><g>vedi offerte</g></a></button>
+</body>
+</html>
