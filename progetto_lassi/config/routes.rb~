@@ -1,0 +1,18 @@
+Rails.application.routes.draw do
+  
+	resources :users, only: [:show]
+
+	devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks" }
+
+	root :to => 'pages#home'
+
+	resources :travels
+	resources :joinedtravels
+	
+	devise_scope :user do 
+		get '/users/sign_out' => 'devise/sessions#destroy'
+	end
+
+	
+
+end

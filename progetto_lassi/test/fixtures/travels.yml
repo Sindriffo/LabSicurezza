@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  citta_partenza: MyString
+  citta_arrivo: MyString
+  data: 2020-06-03
+  ora_partenza: 2020-06-03 16:29:13
+  ora_arrivo: 2020-06-03 16:29:13
+  via_partenza: MyString
+  via_arrivo: MyString
+  prezzo: 1.5
+  posti_disponibili: 1
+
+two:
+  user_id: 1
+  citta_partenza: MyString
+  citta_arrivo: MyString
+  data: 2020-06-03
+  ora_partenza: 2020-06-03 16:29:13
+  ora_arrivo: 2020-06-03 16:29:13
+  via_partenza: MyString
+  via_arrivo: MyString
+  prezzo: 1.5
+  posti_disponibili: 1

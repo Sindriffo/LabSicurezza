@@ -1,0 +1,2 @@
+class Joinedtravel < ApplicationRecord
+end

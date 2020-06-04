@@ -1,0 +1,27 @@
+%h2 Crea un nuovo viaggio
+
+= form_tag travels_path, :method => :post do
+
+    = label :travel, :citta_partenza, 'Città di partenza'
+    = text_field :travel, :citta_partenza
+
+    = label :travel, :citta_arrivo, 'Città di arrivo'
+    = text_field :travel, :citta_arrivo
+ 
+    = label :travel, :data, 'Data'
+    = date_select :travel, :data
+
+    = label :travel, :ora_partenza, 'Orario partenza'
+    = time_field :travel, :ora_partenza
+
+    = label :travel, :ora_arrivo, 'Orario arrivo'
+    = time_field :travel, :ora_arrivo
+ 
+    = label :travel, :prezzo, 'Prezzo'
+    = text_field :travel, :prezzo
+
+    = label :travel, :posti_disponibili, 'Posti Disponibili'
+    = select :travel, :posti_disponibili, [1, 2, 3, 4, 5, 6, 7]
+
+    
+    = submit_tag 'Save Changes' 

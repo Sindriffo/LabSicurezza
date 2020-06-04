@@ -1,0 +1,15 @@
+%h1 Pagina principale dell'utente
+
+%table#travels
+	%tbody
+		%tr
+			%td= link_to ("Profilo"), current_user
+		%tr
+			%td= link_to ("I miei viaggi"), joinedtravels_path(@user) 
+		%tr
+			%td= link_to ("Offri un viaggio"), new_travel_path() 
+		%tr
+			%td= link_to ("Viaggi disponibili"), travels_path(@user)
+		%tr
+			%td= link_to ("Logout"), destroy_user_session_path
+
