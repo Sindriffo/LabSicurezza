@@ -18,7 +18,7 @@ class TravelsController < ApplicationController
 	def create
 		@travel = Travel.create!(params[:travel].permit(:citta_partenza, :citta_arrivo, :data, :ora_partenza, :ora_arrivo,
 		:via_partenza, :via_arrivo, :prezzo, :posti_disponibili))
-		authorize! :create, @travel, :message => "BEWARE: You are not authorized to create new travels."
+		# authorize! :create, @travel, :message => "BEWARE: You are not authorized to create new travels."
 		flash[:notice] = "#{@travel} was successfully created."
 		redirect_to travels_path
 	end
