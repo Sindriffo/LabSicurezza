@@ -46,6 +46,7 @@ class TravelsController < ApplicationController
 	end
 
 	def create
+
 		@travel = Travel.new(params[:travel].permit!)
 		@travel.user_id = session[:user_id]
 		if @travel.save
