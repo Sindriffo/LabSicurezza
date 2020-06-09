@@ -9,7 +9,7 @@ class JoinedtravelsController < ApplicationController
 				redirect_to joinedtravels_path()
 			end
 		
-			id = session[:user_id]
+			id = current_user.id
 			if User.exists?(id)
 				@user = User.find(id)
 				@past_travels = Travel.where('travels.data < ?', DateTime.now)

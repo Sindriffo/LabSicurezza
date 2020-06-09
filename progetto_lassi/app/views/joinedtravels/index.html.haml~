@@ -1,0 +1,17 @@
+%h1 I miei Viaggi
+
+%h2 Viaggi passati
+%table#travels
+	%thead
+		%tr
+			%th Nome Utente
+			%th Data
+			%th Partenza
+			%th Arrivo
+			%th Prezzo
+			%th Dettagli
+			%th Recensione
+
+
+
+
