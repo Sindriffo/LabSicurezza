@@ -12,21 +12,21 @@
       %th Maggiori Dettagli
       %th Scegli viaggio
 
-%tbody
-- @travels.each do |travel|
-  %tr
-  %td= travel.data
-  %td= travel.citta_partenza
-  %td= travel.citta_arrivo
-  %td
-  = travel.prezzo
-  = "€"
-  %td= travel.posti_disponibili  
-  %td= link_to "Dettagli Viaggio", travel_path(travel) 
-  %td= link_to "Aggiungi", new_joinedtravel_path(travel)
-  %br
+  %tbody
+  - @travels.each do |travel|
+    %tr
+      %td= travel.user.nome
+      %td= travel.data
+      %td= travel.citta_partenza
+      %td= travel.citta_arrivo
+      %td
+        = travel.prezzo
+        = "€"
+      %td= travel.posti_disponibili  
+      %td= link_to "Dettagli Viaggio", travel_path(travel) 
+      %td= link_to "Aggiungi", new_joinedtravel_path(travel)
 
-
+-# %br
+-# %br
 %br
-%br
-%td= link_to "Torna alla homepage"
+%td= link_to "Torna alla homepage", root_path()

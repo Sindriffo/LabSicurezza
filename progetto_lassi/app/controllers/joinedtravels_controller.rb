@@ -18,9 +18,20 @@ class JoinedtravelsController < ApplicationController
 				@past_joinedtravels = @past_travels.joins(:joinedtravels).where('joinedtravels.user_id == ?', @user.id)
 				@future_joinedtravels = @future_travels.joins(:joinedtravels).where('joinedtravels.user_id == ?', id)
 				
-		
+				
+				# if @past_joinedtravels.first == nil
+				# 	render html: "yes"
+				# else
+				# 	render html: "no"
+				# end
+
 				@created_travels = Travel.where('travels.user_id == ?', id)
 	
+				# if @created_travels.first == nil
+				# 	render html: "yes"
+				# else
+				# 	render html: @created_travels.first.citta_partenza
+				# end
 			else
 				render html: 'Error! User does not exit'
 			end
@@ -28,7 +39,7 @@ class JoinedtravelsController < ApplicationController
 
 		def new
 			id = params[:user_id]
-			user_id = session[:user_id]
+			user_id = current_user.id
 			@jt = Joinedtravel.new(:user_id => user_id, :travel_id => id)
 			@jt.save
 			redirect_to travels_path()
@@ -38,7 +49,6 @@ class JoinedtravelsController < ApplicationController
 		def show
 			redirect_to joinedtravels_path()
 		end
-
 
 
 		def create

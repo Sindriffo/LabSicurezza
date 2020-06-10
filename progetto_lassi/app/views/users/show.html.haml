@@ -1,17 +1,29 @@
 %h1 Profilo Utente
 
-
-
 %ul#user
-
-
+  %li
+    %strong Nome:
+    = @user.nome
+  %li
+    %strong Cognome:
+    = @user.cognome
   %li
     %strong Email:
     = @user.email
   %li
-    %strong Password:
-    = @user.encrypted_password
+    %strong Telefono:
+    = @user.telefono
+  %li
+    %strong Rating:
+    = @user.rating
 
+
+%br
 %tr
   %td= link_to ("Cambio password"), edit_user_registration_path
+
+%br
+%br
+%td= link_to "Torna alla homepage", root_path()
+
 
