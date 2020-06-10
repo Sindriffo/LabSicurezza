@@ -7,7 +7,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string :nome
       t.string :cognome
       t.string :telefono
-      t.string :password
       t.integer :rating
 
       ## Database authenticatable
