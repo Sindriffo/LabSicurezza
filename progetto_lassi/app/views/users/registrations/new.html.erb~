@@ -36,7 +36,7 @@
 
 <div class="field">
     <%= f.label :telefono %><br />
-    <%= f.telephone_field :telefono, autofocus: true, autocomplete: "telefono" %>
+    <%= f.telefono_field :telefono, autofocus: true, autocomplete: "telefono" %>
   </div>
 
 
