@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20200829084543) do
     t.string "nome"
     t.string "cognome"
     t.integer "rating"
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
