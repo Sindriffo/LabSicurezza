@@ -46,7 +46,6 @@ class TravelsController < ApplicationController
 	end
 
 	def create
-
 		@travel = Travel.new(params[:travel].permit!)
 		@travel.user_id = current_user.id
 		if @travel.save
@@ -57,6 +56,7 @@ class TravelsController < ApplicationController
             redirect_to root_path
         end
 	end
+
 
 	def update
 

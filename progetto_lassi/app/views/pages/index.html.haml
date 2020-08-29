@@ -1,0 +1,15 @@
+%h2 Cerca un viaggio
+
+= form_tag travels_path, :method => :post do
+
+    = label :travel, :citta_partenza, 'Città di partenza'
+    = text_field :travel, :citta_partenza
+
+    = label :travel, :citta_arrivo, 'Città di arrivo'
+    = text_field :travel, :citta_arrivo
+ 
+    = label :travel, :data, 'Data'
+    = date_select :travel, :data
+
+    
+    = submit_tag 'Conferma' 
