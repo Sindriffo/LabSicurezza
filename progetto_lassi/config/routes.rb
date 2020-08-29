@@ -7,8 +7,7 @@ Rails.application.routes.draw do
 	root :to => 'pages#home'
 	# root :to => 'travels#find'
 
-	resources :pages
-
+	resources :finds
 	resources :travels
 	resources :joinedtravels
 	
