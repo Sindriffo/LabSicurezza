@@ -6,17 +6,13 @@ class PagesController < ApplicationController
 	end
 
 	def new
-		@page = Page.new
 	end
 
 	def index
-		@page = Page.new#(params[:page].permit)
-		
-		# @a = (@citta == nil)
+		@page = params[:citta_partenza]
 	end
 
 	def create
-		@page = Page.new(params[:page].permit!)
 		render html: @page
 	end
 

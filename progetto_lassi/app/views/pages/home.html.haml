@@ -1,19 +1,16 @@
-
-
 - if current_user.admin?
-
-	%h1 "Pagina principale dell'admin"
+	%h1 Pagina principale dell'admin
 	
-	%tbody
-		%tr
-			%td= link_to ("Lista utenti")
-		
-		%br
-		%tr
-			%td= link_to ("Utenti segnalati")
-		%br		
-		%tr
-			%td= link_to ("Logout"), destroy_user_session_path
+	%table#travels
+		%tbody
+			%tr
+				%td= link_to ("Lista utenti")
+			%tr
+				%td= link_to ("Utenti segnalati")		
+			%tr
+				%td= link_to ("Lista viaggi")		
+			%tr
+				%td= link_to ("Logout"), destroy_user_session_path
 
 
 - else
