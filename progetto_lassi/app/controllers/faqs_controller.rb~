@@ -1,0 +1,8 @@
+class FaqsController < ApplicationController
+
+    def index
+       render html: "ciao"
+    end
+
+
+end

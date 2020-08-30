@@ -7,12 +7,6 @@
 
     = label :travel, :citta_arrivo, 'Città di arrivo'
     = text_field :travel, :citta_arrivo
-    
-    = label :travel, :via_partenza, 'Via di partenza'
-    = text_field :travel, :via_partenza
-
-    = label :travel, :via_arrivo, 'Via di arrivo'
-    = text_field :travel, :via_arrivo
  
     = label :travel, :data, 'Data'
     = date_select :travel, :data
