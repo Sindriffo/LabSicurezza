@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200901091804) do
+ActiveRecord::Schema.define(version: 20200901111112) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20200901091804) do
     t.integer "rating"
     t.boolean "admin", default: false
     t.boolean "sospeso", default: false
+    t.integer "segnalato"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

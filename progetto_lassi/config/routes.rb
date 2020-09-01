@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 	resources :faqs
         resources :contattacis
         resources :infos
+	resources :segnalatis
 	resources :finds
 	resources :travels
 	resources :joinedtravels
