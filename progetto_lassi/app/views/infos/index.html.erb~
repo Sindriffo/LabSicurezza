@@ -14,7 +14,7 @@ Sono nato a Valona il 30/3/1995, ho conseguito la maturità scientifica presso i
 un' esperienza lavorativa a Vienna ho intrapreso il  percorso universitario che mi ha portato a sviluppare questo progetto.
 <br>
 <br>
-<%=image_tag("tozzi.jpeg", size: "200x200")%>
+<%=image_tag(tozzi.jpeg", size: "200x200")%>
 <br>
 <br>
 Mi chiamo Alessandro Tozzi, ho 23 anni e sono uno studente di ingegneria informatica alla sapienza di Roma.
