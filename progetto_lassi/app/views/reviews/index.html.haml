@@ -1,0 +1,24 @@
+%h1 Lista partecipanti
+
+%table#users
+  %thead
+    %tr
+      %th Nome
+      %th Cognome
+      %th Email
+      %th Rating
+      %th
+
+
+  %tbody
+  - @users.each do |user|
+    %tr
+      %td= user.nome
+      %td= user.cognome
+      %td= user.email
+      %td= user.rating
+      %td= link_to "Recensisci utente", user_path(user), :method => :delete    
+-# %br
+-# %br
+%br
+%td= link_to "Torna alla homepage", root_path()

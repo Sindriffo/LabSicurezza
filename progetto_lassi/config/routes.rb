@@ -8,8 +8,9 @@ Rails.application.routes.draw do
 	# root :to => 'travels#find'
       
 	resources :faqs
-        resources :contattacis
-        resources :infos
+	resources :reviews
+	resources :contattacis
+	resources :infos
 	resources :segnalatis
 	resources :finds
 	resources :travels
