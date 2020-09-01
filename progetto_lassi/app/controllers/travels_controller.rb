@@ -16,7 +16,7 @@ class TravelsController < ApplicationController
 				@future_travels = Travel.where('travels.data >= ?', DateTime.now)
 				@past_travels = Travel.where('travels.data < ?', DateTime.now)
 			else
-
+				
 				#All travels created from other users
 				@other_user_travels = Travel.where('travels.user_id != ?', @user.id).where('travels.data >= ?', DateTime.now)
 
