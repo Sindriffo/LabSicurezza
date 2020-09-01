@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 	root :to => 'pages#home'
 	# root :to => 'travels#find'
       
-        resources :faq
+	resources :faqs
 	resources :finds
 	resources :travels
 	resources :joinedtravels
@@ -19,6 +19,6 @@ Rails.application.routes.draw do
 	end
 
 
-	resources :users, only: [:show]
+	resources :users
 
 end
