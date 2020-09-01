@@ -8,7 +8,9 @@
       %th Email
       %th Rating
       %th Data Registrazione
-      %th Admin
+      %th Sospeso
+      %th
+      %th
 
 
   %tbody
@@ -19,9 +21,18 @@
       %td= user.email
       %td= user.rating
       %td= user.created_at
-      %td= user.admin   
-      %td= link_to "Cancella utente", user_path(user), :method => :delete
-
+      %td= user.sospeso   
+      -if user.admin?
+        -# %td= link_to "Cancella utente", user_path(user), :method => :delete
+        %td= "ADMIN"
+        %td= "ADMIN"
+      -else
+        %td= link_to "Cancella utente", user_path(user), :method => :delete
+        -if user.sospeso?
+          %td= link_to "Sblocca utente", user_path(user), :method => :put
+        -else
+          %td= link_to "Blocca utente", user_path(user), :method => :put
+          
 -# %br
 -# %br
 %br
