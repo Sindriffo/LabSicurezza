@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 	# root :to => 'travels#find'
       
 	resources :faqs
+        resources :contattacis
+        resources :infos
 	resources :finds
 	resources :travels
 	resources :joinedtravels
