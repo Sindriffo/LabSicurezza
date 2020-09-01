@@ -3,6 +3,10 @@ class PagesController < ApplicationController
 	before_action :authenticate_user!	
 
 	def home
+		if current_user.sospeso?
+			reset_session
+			render html: "Utente temporaneamente sospeso"
+		end
 	end
 
 	def new
