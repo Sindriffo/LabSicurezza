@@ -4,11 +4,11 @@
 	%table#travels
 		%tbody
 			%tr
-				%td= link_to ("Lista utenti")
+				%td= link_to ("Lista utenti"), users_path
 			%tr
 				%td= link_to ("Utenti segnalati")		
 			%tr
-				%td= link_to ("Lista viaggi")		
+				%td= link_to ("Lista viaggi"), travels_path(@user)		
 			%tr
 				%td= link_to ("Logout"), destroy_user_session_path
 

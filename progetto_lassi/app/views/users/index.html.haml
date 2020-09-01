@@ -1,0 +1,28 @@
+%h1 Offerte Viaggi
+
+%table#users
+  %thead
+    %tr
+      %th Nome
+      %th Cognome
+      %th Email
+      %th Rating
+      %th Data Registrazione
+      %th Admin
+
+
+  %tbody
+  - @users.each do |user|
+    %tr
+      %td= user.nome
+      %td= user.cognome
+      %td= user.email
+      %td= user.rating
+      %td= user.created_at
+      %td= user.admin   
+      %td= link_to "Cancella utente", user_path(user), :method => :delete
+
+-# %br
+-# %br
+%br
+%td= link_to "Torna alla homepage", root_path()
