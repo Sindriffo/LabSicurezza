@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 	def home
 		if current_user.sospeso?
 			reset_session
-			render html: "Utente temporaneamente sospeso"
+			render html: "<h1 style='color:red'>Account temporaneamente sospeso</h1>".html_safe
 		end
 	end
 
