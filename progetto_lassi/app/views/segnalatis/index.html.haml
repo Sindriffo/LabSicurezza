@@ -29,7 +29,7 @@
         %td= "ADMIN"
         %td= "ADMIN"
       -else
-        %td= link_to "Cancella utente", user_path(user), :method => :delete
+        %td= link_to "Cancella utente", segnalati_path(user), :method => :delete
         -if user.sospeso?
           %td= link_to "Sblocca utente", segnalati_path(user), :method => :put
         -else

@@ -13,7 +13,8 @@ class TravelsController < ApplicationController
 			@user = User.find(id)
 
 			if @user.admin?
-				@travels = Travel.where('travels.data >= ?', DateTime.now)
+				@future_travels = Travel.where('travels.data >= ?', DateTime.now)
+				@past_travels = Travel.where('travels.data < ?', DateTime.now)
 			else
 
 				#All travels created from other users
@@ -71,7 +72,11 @@ class TravelsController < ApplicationController
 		id = params[:id]
 		@travel = Travel.find(id)
 		@travel.destroy
-        flash[:notice] = "Travel deleted."
-		redirect_to joinedtravels_path(User.find(current_user.id))
+		flash[:notice] = "Travel deleted."
+		if current_user.admin?
+			redirect_to travels_path(@user)
+		else
+			redirect_to joinedtravels_path(User.find(current_user.id))
+		end
 	end
 end

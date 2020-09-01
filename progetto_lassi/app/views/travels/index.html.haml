@@ -1,32 +1,89 @@
-%h1 Offerte Viaggi
+- if current_user.admin?
+  %h1 Offerte Viaggi
+  %h2 Viaggi Passati
+  %table#travels
+    %thead
+      %tr
+        %th Nome Utente
+        %th Data
+        %th Partenza
+        %th Arrivo
+        %th Prezzo
+        %th Posti disponibili
+        %th Maggiori Dettagli
+    %tbody
+    - @past_travels.each do |travel|
+      %tr
+        %td= travel.user.nome
+        %td= travel.data
+        %td= travel.citta_partenza
+        %td= travel.citta_arrivo
+        %td
+          = travel.prezzo
+          = "€"
+        %td= travel.posti_disponibili  
+        %td= link_to "Dettagli Viaggio", travel_path(travel)
+  %h2 Viaggi Programmati
+  %table#travels
+    %thead
+      %tr
+        %th Nome Utente
+        %th Data
+        %th Partenza
+        %th Arrivo
+        %th Prezzo
+        %th Posti disponibili
+        %th Maggiori Dettagli
+        %th
+    %tbody
+    - @future_travels.each do |travel|
+      %tr
+        %td= travel.user.nome
+        %td= travel.data
+        %td= travel.citta_partenza
+        %td= travel.citta_arrivo
+        %td
+          = travel.prezzo
+          = "€"
+        %td= travel.posti_disponibili  
+        %td= link_to "Dettagli Viaggio", travel_path(travel)
+        %td= link_to ('Cancella questo viaggio'), travel_path(travel), :method => :delete 
 
-%table#travels
-  %thead
-    %tr
-      %th Nome Utente
-      %th Data
-      %th Partenza
-      %th Arrivo
-      %th Prezzo
-      %th Posti disponibili
-      %th Maggiori Dettagli
-      %th Scegli viaggio
+  -# %br
+  -# %br
+  %br
+  %td= link_to "Torna alla homepage", root_path()
 
-  %tbody
-  - @travels.each do |travel|
-    %tr
-      %td= travel.user.nome
-      %td= travel.data
-      %td= travel.citta_partenza
-      %td= travel.citta_arrivo
-      %td
-        = travel.prezzo
-        = "€"
-      %td= travel.posti_disponibili  
-      %td= link_to "Dettagli Viaggio", travel_path(travel) 
-      %td= link_to "Aggiungi", new_joinedtravel_path(travel)
+- else
+  %h1 Offerte Viaggi
 
--# %br
--# %br
-%br
-%td= link_to "Torna alla homepage", root_path()
+  %table#travels
+    %thead
+      %tr
+        %th Nome Utente
+        %th Data
+        %th Partenza
+        %th Arrivo
+        %th Prezzo
+        %th Posti disponibili
+        %th Maggiori Dettagli
+        %th Scegli viaggio
+
+    %tbody
+    - @travels.each do |travel|
+      %tr
+        %td= travel.user.nome
+        %td= travel.data
+        %td= travel.citta_partenza
+        %td= travel.citta_arrivo
+        %td
+          = travel.prezzo
+          = "€"
+        %td= travel.posti_disponibili  
+        %td= link_to "Dettagli Viaggio", travel_path(travel) 
+        %td= link_to "Aggiungi", new_joinedtravel_path(travel)
+
+  -# %br
+  -# %br
+  %br
+  %td= link_to "Torna alla homepage", root_path()
