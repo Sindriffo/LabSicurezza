@@ -34,7 +34,7 @@
 <br>
 <%= link_to "FAQ", faqs_path() %> &nbsp;
 <%= link_to "Contattaci", contattacis_path()%> &nbsp;
-<%= link_to "Informazioni sviluppatori", infos_path() %>
+<%= link_to "Informazioni sviluppatori, infos_path() %>
 
 
 
