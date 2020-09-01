@@ -3,7 +3,7 @@ class CreateJoinedtravels < ActiveRecord::Migration[5.1]
     create_table :joinedtravels do |t|
       t.references 'user'
       t.references 'travel'
-      t.integer 'rating'
+      t.boolean 'rated', default:false
       t.text 'review'
       t.timestamps
     end

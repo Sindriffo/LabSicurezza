@@ -13,7 +13,7 @@
 			%th Recensione
 
 	%tbody
-		- @past_joinedtravels.each do |travel|
+		- @past_travels.each do |travel|
 			%tr
 				%td= travel.user.nome
 				%td= travel.data

@@ -6,7 +6,9 @@ class ReviewsController < ApplicationController
 
         @users = []
         @user = Travel.find(travel_id).user
-        @users << @user
+        if @user != current_user
+            @users << @user
+        end
 
         @other_users = User.joins(:joinedtravels).where("joinedtravels.travel_id == ?", travel_id).where("user_id != ?", current_user.id)
 
