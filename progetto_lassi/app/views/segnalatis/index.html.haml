@@ -1,4 +1,4 @@
-%h1 Offerte Viaggi
+%h1 Lista utenti segnalati
 
 %table#users
   %thead
@@ -9,6 +9,7 @@
       %th Rating
       %th Data Registrazione
       %th Sospeso
+      %th Nr. segnalazioni
       %th
       %th
 
@@ -22,6 +23,7 @@
       %td= user.rating
       %td= user.created_at
       %td= user.sospeso   
+      %td= user.segnalato
       -if user.admin?
         -# %td= link_to "Cancella utente", user_path(user), :method => :delete
         %td= "ADMIN"
@@ -29,9 +31,9 @@
       -else
         %td= link_to "Cancella utente", user_path(user), :method => :delete
         -if user.sospeso?
-          %td= link_to "Sblocca utente", user_path(user), :method => :put
+          %td= link_to "Sblocca utente", segnalati_path(user), :method => :put
         -else
-          %td= link_to "Blocca utente", user_path(user), :method => :put
+          %td= link_to "Sospendi utente", segnalati_path(user), :method => :put
           
 -# %br
 -# %br
