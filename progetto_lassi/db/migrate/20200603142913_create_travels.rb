@@ -12,6 +12,7 @@ class CreateTravels < ActiveRecord::Migration[5.1]
       t.string :via_arrivo
       t.float :prezzo
       t.integer :posti_disponibili
+      t.boolean :rated, default:false
       t.timestamps
     end
   end

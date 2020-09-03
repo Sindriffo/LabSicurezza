@@ -16,7 +16,10 @@ class JoinedtravelsController < ApplicationController
 				@future_travels = Travel.where('travels.data >= ?', DateTime.now)
 				
 				@created_past_travels = Travel.where('travels.user_id == ?', id).where('travels.data < ?', DateTime.now)
+												.where('travels.rated == ?', false)
+				
 				@past_joinedtravels = @past_travels.joins(:joinedtravels).where('joinedtravels.user_id == ?', @user.id)
+												.where('joinedtravels.rated == ?', false)
 				
 				@past_travels = []
 	
