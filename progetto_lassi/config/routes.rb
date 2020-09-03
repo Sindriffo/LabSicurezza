@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 	resources :contattacis
 	resources :infos
 	resources :segnalatis
+	resources :low_ratings
 	resources :finds
 	resources :travels
 	resources :joinedtravels

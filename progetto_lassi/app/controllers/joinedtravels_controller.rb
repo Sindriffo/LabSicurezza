@@ -44,6 +44,9 @@ class JoinedtravelsController < ApplicationController
 			user_id = current_user.id
 			@jt = Joinedtravel.new(:user_id => user_id, :travel_id => id)
 			@jt.save
+			@travel = Travel.find(id)
+			@travel.posti_disponibili -= 1
+			@travel.save
 			redirect_to travels_path()
 		end
 		
@@ -62,6 +65,15 @@ class JoinedtravelsController < ApplicationController
 		end
 
 		def destroy
-			render html: 'deleting a travel'
+			travel_id = params[:id]
+			user_id = current_user.id
+			# render html: travel_id
+			@jt = Joinedtravel.where('joinedtravels.user_id == ?', user_id).where('joinedtravels.travel_id == ?', travel_id).first
+			@jt.destroy
+			@travel = Travel.find(travel_id)
+			@travel.posti_disponibili += 1
+			@travel.save
+
+			redirect_to joinedtravels_path()
 		end
 end

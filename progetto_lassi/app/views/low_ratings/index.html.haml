@@ -1,0 +1,44 @@
+%h1 Lista utenti con basso rating
+
+%table#users
+  %thead
+    %tr
+      %th Nome
+      %th Cognome
+      %th Email
+      %th Rating
+      %th Data Registrazione
+      %th Sospeso
+      %th Nr. segnalazioni
+      %th
+      %th
+
+
+  %tbody
+  - @users.each do |user|
+    %tr
+      %td= user.nome
+      %td= user.cognome
+      %td= user.email
+      - if user.rating != nil
+        %td= "%.1f" % user.rating
+      - else 
+        %td= "nessun rating"
+      %td= user.created_at
+      %td= user.sospeso   
+      %td= user.segnalato
+      -if user.admin?
+        -# %td= link_to "Cancella utente", user_path(user), :method => :delete
+        %td= "ADMIN"
+        %td= "ADMIN"
+      -else
+        %td= link_to "Cancella utente", low_rating_path(user), :method => :delete
+        -if user.sospeso?
+          %td= link_to "Sblocca utente", low_rating_path(user), :method => :put
+        -else
+          %td= link_to "Sospendi utente", low_rating_path(user), :method => :put
+          
+-# %br
+-# %br
+%br
+%td= link_to "Torna alla homepage", root_path()

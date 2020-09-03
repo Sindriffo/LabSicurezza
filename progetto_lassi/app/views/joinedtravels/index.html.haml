@@ -48,7 +48,7 @@
 					= travel.prezzo
 					= "€"
 				%td= link_to ("Dettagli Viaggio"), travel_path(travel) 
-				%td= link_to ("Rimuovi prenotazione")
+				%td= link_to ("Rimuovi prenotazione"), joinedtravel_path(travel), :method => :delete
 
 %h2 Viaggi creati
 %table#travels

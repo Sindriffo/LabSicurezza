@@ -18,10 +18,10 @@ class TravelsController < ApplicationController
 			else
 				
 				#All travels created from other users
-				@other_user_travels = Travel.where('travels.user_id != ?', @user.id).where('travels.data >= ?', DateTime.now)
+				@other_user_travels = Travel.where('travels.user_id != ?', @user.id).where('travels.data >= ?', DateTime.now).where('travels.posti_disponibili > ?', 0)
 
 				#All travels the user joined
-				@joined_travels = Travel.joins(:joinedtravels).where('joinedtravels.user_id == ?', @user.id)
+				@joined_travels = Travel.joins(:joinedtravels).where('joinedtravels.user_id == ?', @user.id).where('travels.posti_disponibili > ?', 0)
 
 
 				@travels = []
@@ -71,12 +71,21 @@ class TravelsController < ApplicationController
 	def destroy
 		id = params[:id]
 		@travel = Travel.find(id)
+		
+		@all_joined_travels = Joinedtravel.where('joinedtravels.travel_id == ?', id)
+
+		@all_joined_travels.each do |jt|
+			jt.destroy
+		end
+		
+
 		@travel.destroy
-		flash[:notice] = "Travel deleted."
 		if current_user.admin?
 			redirect_to travels_path(@user)
 		else
 			redirect_to joinedtravels_path(User.find(current_user.id))
 		end
 	end
+
+
 end
