@@ -1,4 +1,4 @@
-%h1 Lista partecipanti
+%h1 Recensisci utenti
 
 %table#users
   %thead
@@ -7,7 +7,7 @@
       %th Cognome
       %th Email
       %th Rating
-      %th
+      %th Segnala
 
 
   %tbody
@@ -16,9 +16,18 @@
       %td= user.nome
       %td= user.cognome
       %td= user.email
-      %td= user.rating
-      %td= link_to "Recensisci utente", review_path(user)    
--# %br
--# %br
+      %td= select :travel, :rating, [5, 4, 3, 2, 1]
+      %td= select :travel, :segnala, ["no", "si"]
+      -# # "Segnala utente", segnalati_path(user)
+
+%br
+-# %h2 Cerca un viaggio
+= form_tag review_path(@user), :method => :put do
+
+
+  = submit_tag 'Conferma' 
+%br
+%br
+%br
 %br
 %td= link_to "Torna alla homepage", root_path()
