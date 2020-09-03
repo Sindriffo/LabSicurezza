@@ -25,11 +25,11 @@ class ReviewsController < ApplicationController
         ####################Update .rated values
         if @travel.user_id == current_user.id
             @travel.rated = true
-            # @travel.save
+            @travel.save
         else
             @joinedtravel = Joinedtravel.where("joinedtravels.travel_id == ?", travel_id).where("joinedtravels.user_id == ?", current_user.id).first 
             @joinedtravel.rated = true
-            # @joinedtravel.save
+            @joinedtravel.save
         end
         
 
