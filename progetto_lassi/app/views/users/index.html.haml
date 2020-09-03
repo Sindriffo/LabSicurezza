@@ -19,7 +19,10 @@
       %td= user.nome
       %td= user.cognome
       %td= user.email
-      %td= user.rating
+      - if user.rating != nil
+        %td= "%.1f" % user.rating
+      - else 
+        %td= "nessun rating"
       %td= user.created_at
       %td= user.sospeso   
       -if user.admin?
