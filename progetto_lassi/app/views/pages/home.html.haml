@@ -1,5 +1,5 @@
 - if current_user.admin?
-	%h1 Pagina principale dell'admin
+	%h1= "Pagina dell'admin " + current_user.nome + " " + current_user.cognome
 	
 	%table#travels
 		%tbody
@@ -16,7 +16,7 @@
 
 
 - else
-	%h1 Pagina principale dell'utente
+	%h1= 'Pagina di ' + current_user.nome + " " + current_user.cognome
 
 	%table#travels
 		%tbody
