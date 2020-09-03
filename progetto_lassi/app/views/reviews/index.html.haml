@@ -1,28 +1,29 @@
-%h1 Recensisci utenti
-
-%table#users
-  %thead
-    %tr
-      %th Nome
-      %th Cognome
-      %th Email
-      %th Rating
-      %th Segnala
-
-
-  %tbody
-  - @users.each do |user|
-    %tr
-      %td= user.nome
-      %td= user.cognome
-      %td= user.email
-      %td= select :travel, :rating, [5, 4, 3, 2, 1]
-      %td= select :travel, :segnala, ["no", "si"]
-      -# # "Segnala utente", segnalati_path(user)
-
-%br
--# %h2 Cerca un viaggio
 = form_tag review_path(@user), :method => :put do
+
+  %h1 Recensisci utenti
+
+  %table#users
+    %thead
+      %tr
+        %th Nome
+        %th Cognome
+        %th Email
+        %th Rating
+        %th Segnala
+
+
+    %tbody
+    - $users.each do |user| 
+      %tr
+        %td= user.nome
+        %td= user.cognome
+        %td= user.email
+        %td= select :travel, "rating_" + user.id.to_s, [5, 4, 3, 2, 1]
+        %td= select :travel, "segnala_"+ user.id.to_s, ["no", "si"]
+        -# # "Segnala utente", segnalati_path(user)
+
+  %br
+  -# %h2 Cerca un viaggio
 
 
   = submit_tag 'Conferma' 

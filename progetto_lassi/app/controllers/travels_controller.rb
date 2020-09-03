@@ -1,6 +1,6 @@
 class TravelsController < ApplicationController
 
-		before_action :authenticate_user!
+	before_action :authenticate_user!
 
 	def index
 		id = params[:format]

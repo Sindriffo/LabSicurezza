@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20200614170812) do
     t.integer "segnalato", default: 0
     t.string "nome"
     t.string "cognome"
-    t.integer "rating"
+    t.float "rating"
     t.integer "ratingnum", default: 0
     t.boolean "sospeso", default: false
     t.boolean "admin", default: false
