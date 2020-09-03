@@ -42,6 +42,11 @@ class TravelsController < ApplicationController
 		id = params[:id]
 		if Travel.exists?(id)
 			@travel = Travel.find(id)
+			@conducente = @travel.user
+		
+			@passengers = User.joins(:joinedtravels).where('joinedtravels.travel_id == ?', @travel.id)
+		
+		
 		else
 			render html: 'Travel does not exit'
 		end

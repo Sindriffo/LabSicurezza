@@ -30,5 +30,25 @@
     %strong Numero posti disponibili:
     = @travel.posti_disponibili
 
+%h2 Lista passeggeri
+%h3 Conducente:
+%ul#details
+  %li
+    %td= link_to @conducente.nome + " " + @conducente.cognome, user_path(@conducente)
+
+%h3 Passeggeri:
+%ul#details
+  - @i = 0
+  - @passengers.each do |passenger|
+    - @i += 1
+    %li
+      %td= link_to passenger.nome + " " + passenger.cognome, user_path(passenger)
+    %br
+
+
+
+
+
+
 
 %td= link_to "Torna ai viaggi", travels_path()

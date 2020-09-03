@@ -20,10 +20,12 @@
 
 
 %br
-%tr
-  %td= link_to ("Cambio password"), edit_user_registration_path
 
-%br
+- if current_user.id == params[:id].to_i
+  %tr
+    %td= link_to ("Cambio password"), edit_user_registration_path
+  %br
+
 %br
 %td= link_to "Torna alla homepage", root_path()
 
