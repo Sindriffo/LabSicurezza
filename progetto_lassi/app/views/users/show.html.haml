@@ -15,7 +15,8 @@
     = @user.telefono
   %li
     %strong Rating:
-    = "%.1f" % @user.rating
+    - if @user.rating != nil
+      = "%.1f" % @user.rating
 
 
 %br

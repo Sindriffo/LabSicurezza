@@ -18,7 +18,7 @@
         %td= user.nome
         %td= user.cognome
         %td= user.email
-        %td= select :travel, "rating_" + user.id.to_s, [5, 4, 3, 2, 1]
+        %td= select :travel, "rating_" + user.id.to_s, [" ", 5, 4, 3, 2, 1]
         %td= select :travel, "segnala_"+ user.id.to_s, ["no", "si"]
         -# # "Segnala utente", segnalati_path(user)
 
