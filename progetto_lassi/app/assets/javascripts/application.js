@@ -15,4 +15,4 @@
 //= require_tree .
 
 var L = require('leaflet');
-require('leaflet-routing-machine');
+var K = require('leaflet-routing-machine-3.2.12');

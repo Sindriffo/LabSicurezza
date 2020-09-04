@@ -46,13 +46,25 @@ class TravelsController < ApplicationController
 		
 			@passengers = User.joins(:joinedtravels).where('joinedtravels.travel_id == ?', @travel.id)
 		
-		
+
+			############################################# Open Street Maps Query
+			@partenza_query
+			if @travel.via_partenza != ""
+				@partenza_query = @travel.via_partenza.to_s + ", " + @travel.citta_partenza.to_s
+			else
+				@partenza_query = @travel.citta_partenza.to_s
+			end
+
+			@arrivo_query
+			if @travel.via_arrivo != ""
+				@arrivo_query = @travel.via_arrivo.to_s + ", " + @travel.citta_arrivo.to_s
+			else
+				@arrivo_query = @travel.citta_arrivo.to_s
+			end
+
 			@client = OpenStreetMap::Client.new
-			@res = @client.search(q: 'via Manzoni 1, Roma', format: 'json', addressdetails: '1', accept_language: 'it')
-
-			
-
-
+			@partenza = @client.search(q: @partenza_query, format: 'json', addressdetails: '1', accept_language: 'it')
+			@arrivo = @client.search(q: @arrivo_query, format: 'json', addressdetails: '1', accept_language: 'it')
 
 		else
 			render html: 'Travel does not exit'

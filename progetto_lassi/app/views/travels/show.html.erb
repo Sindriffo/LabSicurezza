@@ -1,15 +1,8 @@
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" 
-  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" 
-  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
-
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
 <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
-
-
-
-<%# <link rel="stylesheet" href="leaflet-routing-machine.css" />
-<script src="leaflet-routing-machine.js"></script> %>
 
 
 <h1>Dettagli Viaggio</h1>
@@ -54,82 +47,24 @@
 
 
   
-<div id="map" style="width: 1000px; height: 400px;"></div>
+<div id='map' style='width: 600px; height: 400px;'></div>
 <script>
-  var map = L.map("map");
+  var map = L.map('map').setView(['<%=@partenza[0]['lat']%>', '<%=@partenza[0]['lon']%>'], 10);
+  
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: '<a href="https://www.openstreetmap.org/">OpenStreetMap</a> '+
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(map);
 
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+  var partenza = L.marker(['<%=@partenza[0]['lat']%>', '<%=@partenza[0]['lon']%>']).addTo(map);
+  var arrivo = L.marker(['<%=@arrivo[0]['lat']%>', '<%=@arrivo[0]['lon']%>']).addTo(map);
+  var group = new L.featureGroup([partenza, arrivo]);
 
-var control = L.Routing.control({
-
-  createMarker: function(i, wp) {
-    var options = {
-        draggable: this.draggableWaypoints
-      },
-      marker = L.marker(wp.latLng, options);
-
-    return marker;
-  },
-  waypoints: [
-    L.latLng(35.46222222, 139.62444444),
-    L.latLng(35.681298, 139.766247)
-  ],
-  geocoder: L.Control.Geocoder.nominatim(),
-    routeWhileDragging: true,
-    reverseWaypoints: true,
-    showAlternatives: true,
-    altLineOptions: {
-        styles: [
-            {color: 'black', opacity: 0.15, weight: 9},
-            {color: 'white', opacity: 0.8, weight: 6},
-            {color: 'blue', opacity: 0.5, weight: 2}
-        ]
-    }
-}).addTo(map);
-
-L.Routing.errorControl(control).addTo(map);
-//   var cities = L.layerGroup();
-//   L.marker([57.74, 11.94]).bindPopup('Partenza').addTo(cities);
-//   L.marker([57.6792, 11.949]).bindPopup('Arrivo').addTo(cities);
-
-// 	var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-// 			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-// 			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-// 		mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
-
-//   var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox/light-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
-//   var streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
-
-// 	var map = L.map('map', {
-// 		center: [57.74, 11.94],
-// 		zoom: 10,
-// 		layers: [cities, streets]
-// 	});
-
-// 	var baseLayers = {
-// 		"Streets": streets,
-// 		"Grayscale": grayscale
-// 	};
-// 	var overlays = {
-// 		"Cities": cities
-// 	};
-// 	L.control.layers(baseLayers, overlays).addTo(map);
-
-
-
-// //   // L.marker(['<%=@res[0]['lat']%>', '<%=@res[0]['lon']%>']).addTo(mymap);
-
-
-//   L.Routing.control({
-//         waypoints: [
-//             L.latLng(57.74, 11.94),
-//             L.latLng(57.6792, 11.949)
-//         ],
-//         routeWhileDragging: true,
-//         geocoder: L.Control.Geocoder.nominatim()
-//     }).addTo(map);
+  map.fitBounds(group.getBounds());
 </script>
 
 
