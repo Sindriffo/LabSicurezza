@@ -13,12 +13,12 @@ class TravelsController < ApplicationController
 			@user = User.find(id)
 
 			if @user.admin?
-				@future_travels = Travel.where('travels.data >= ?', DateTime.now)
-				@past_travels = Travel.where('travels.data < ?', DateTime.now)
+				@future_travels = Travel.where('travels.data >= ?', DateTime.now.midnight)
+				@past_travels = Travel.where('travels.data < ?', DateTime.now.midnight)
 			else
 				
 				#All travels created from other users
-				@other_user_travels = Travel.where('travels.user_id != ?', @user.id).where('travels.data >= ?', DateTime.now).where('travels.posti_disponibili > ?', 0)
+				@other_user_travels = Travel.where('travels.user_id != ?', @user.id).where('travels.data >= ?', DateTime.now.midnight).where('travels.posti_disponibili > ?', 0)
 
 				#All travels the user joined
 				@joined_travels = Travel.joins(:joinedtravels).where('joinedtravels.user_id == ?', @user.id).where('travels.posti_disponibili > ?', 0)
@@ -47,6 +47,13 @@ class TravelsController < ApplicationController
 			@passengers = User.joins(:joinedtravels).where('joinedtravels.travel_id == ?', @travel.id)
 		
 		
+			@client = OpenStreetMap::Client.new
+			@res = @client.search(q: 'via Manzoni 1, Roma', format: 'json', addressdetails: '1', accept_language: 'it')
+
+			
+
+
+
 		else
 			render html: 'Travel does not exit'
 		end

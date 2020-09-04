@@ -12,10 +12,10 @@ class JoinedtravelsController < ApplicationController
 			id = current_user.id
 			if User.exists?(id)
 				@user = User.find(id)
-				@past_travels = Travel.where('travels.data < ?', DateTime.now)
-				@future_travels = Travel.where('travels.data >= ?', DateTime.now)
+				@past_travels = Travel.where('travels.data < ?', DateTime.now.midnight)
+				@future_travels = Travel.where('travels.data >= ?', DateTime.now.midnight)
 				
-				@created_past_travels = Travel.where('travels.user_id == ?', id).where('travels.data < ?', DateTime.now)
+				@created_past_travels = Travel.where('travels.user_id == ?', id).where('travels.data < ?', DateTime.now.midnight)
 												.where('travels.rated == ?', false)
 				
 				@past_joinedtravels = @past_travels.joins(:joinedtravels).where('joinedtravels.user_id == ?', @user.id)
@@ -32,7 +32,7 @@ class JoinedtravelsController < ApplicationController
 
 
 				@future_joinedtravels = @future_travels.joins(:joinedtravels).where('joinedtravels.user_id == ?', id)
-				@created_travels = Travel.where('travels.user_id == ?', id).where('travels.data >= ?', DateTime.now)
+				@created_travels = Travel.where('travels.user_id == ?', id).where('travels.data >= ?', DateTime.now.midnight)
 
 			else
 				render html: 'Error! User does not exit'

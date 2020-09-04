@@ -13,3 +13,6 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+var L = require('leaflet');
+require('leaflet-routing-machine');
