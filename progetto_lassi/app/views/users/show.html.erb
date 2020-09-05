@@ -1,5 +1,7 @@
 <h1>Profilo Utente</h1>
-&nbsp;&nbsp;<%= image_tag @user.image.thumb.url%>
+<% if @user.image.thumb.url != nil %>
+  &nbsp;&nbsp;<%= image_tag @user.image.thumb.url%>
+<% end %>
 <br>
 <br>
  <ul id="user">
