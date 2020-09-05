@@ -149,7 +149,7 @@ function autocomplete_init() {
   });
 }; // autocomplete_init
 
-$(document).ready(function() {
+$(document).ready(function() { 
   if( $('#gmaps-canvas').length  ) {
     gmaps_init();
     autocomplete_init();

@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200614170812) do
+ActiveRecord::Schema.define(version: 20200905085324) do
+
+  create_table "autocompletes", force: :cascade do |t|
+    t.string "address"
+    t.integer "street_number"
+    t.string "locality"
+    t.string "route"
+    t.string "administrative_area_level_1"
+    t.string "country"
+    t.integer "postal_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "joinedtravels", force: :cascade do |t|
     t.integer "user_id"

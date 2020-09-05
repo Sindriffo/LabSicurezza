@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :autocompletes
   devise_for :admins
   get 'omniauth/Callbacks'
 
@@ -25,6 +26,9 @@ Rails.application.routes.draw do
 	end
 
 
+	resources :autocompletes
+	root to: 'autocompletes#new'
+	 
 	resources :users
 
 end

@@ -80,18 +80,20 @@ class TravelsController < ApplicationController
 		@travel = Travel.new(params[:travel].permit!)
 		@travel.user_id = current_user.id
 		
-		@client = OpenStreetMap::Client.new
-		@partenza_query
-			if @travel.via_partenza != ""
-				@partenza_query = @travel.via_partenza.to_s + ", " + @travel.citta_partenza.to_s
-			else
-				@partenza_query = @travel.citta_partenza.to_s
-			end
-		@partenza = @client.search(q: @partenza_query, format: 'json', addressdetails: '1', accept_language: 'it')
+		render html: params[:address]
 
-		if @partenza == []
-			redirect_back(fallback_location: root_path)
-		end
+		# @client = OpenStreetMap::Client.new
+		# @partenza_query
+		# 	if @travel.via_partenza != ""
+		# 		@partenza_query = @travel.via_partenza.to_s + ", " + @travel.citta_partenza.to_s
+		# 	else
+		# 		@partenza_query = @travel.citta_partenza.to_s
+		# 	end
+		# @partenza = @client.search(q: @partenza_query, format: 'json', addressdetails: '1', accept_language: 'it')
+
+		# if @partenza == []
+		# 	redirect_back(fallback_location: root_path)
+		# end
 
 		# if @travel.save
         #     flash[:notice] = "Travel was added"
