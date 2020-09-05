@@ -10,10 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
 //= require turbolinks
 //= require_tree .
 //= require jquery
-
-var L = require('leaflet');
-var K = require('leaflet-routing-machine-3.2.12');
+// = require('leaflet');
