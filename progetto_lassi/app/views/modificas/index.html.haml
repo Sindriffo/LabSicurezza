@@ -2,10 +2,24 @@
 
 = form_tag modificas_path, :method => :post do
 
-    = label :user, :nome, 'Nome'
-    = text_field :user, :nome
-
-    = label :user, :cognome, 'Cognome'
-    = text_field :user, :cognome
- 
+    = label :user, :nome, 'Nome*'
+    = text_field :user, :nome, value: current_user.nome, required: true
+    %br
+    %br
+    = label :user, :cognome, 'Cognome*'
+    = text_field :user, :cognome, value: current_user.cognome, required: true
+    %br
+    %br
+    = label :user, :telefono, 'Telefono'
+    = text_field :user, :telefono, value: current_user.telefono
+    %br
+    %br
+    = label :user, :email, 'Email*'
+    = text_field :user, :email, value: current_user.email, required: true
+    %br
+    %br
+    %br
     = submit_tag 'Conferma' 
+    %br
+    %br
+    %td= "*Campi obbligatori"
