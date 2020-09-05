@@ -48,23 +48,12 @@ class TravelsController < ApplicationController
 		
 
 			############################################# Open Street Maps Query
-			@partenza_query
-			if @travel.via_partenza != ""
-				@partenza_query = @travel.via_partenza.to_s + ", " + @travel.citta_partenza.to_s
-			else
-				@partenza_query = @travel.citta_partenza.to_s
-			end
 
-			@arrivo_query
-			if @travel.via_arrivo != ""
-				@arrivo_query = @travel.via_arrivo.to_s + ", " + @travel.citta_arrivo.to_s
-			else
-				@arrivo_query = @travel.citta_arrivo.to_s
-			end
 
 			@client = OpenStreetMap::Client.new
-			@partenza = @client.search(q: @partenza_query, format: 'json', addressdetails: '1', accept_language: 'it')
-			@arrivo = @client.search(q: @arrivo_query, format: 'json', addressdetails: '1', accept_language: 'it')
+			@partenza = @client.search(q: @travel.partenza.to_s, format: 'json', addressdetails: '1', accept_language: 'it')
+			
+			@arrivo = @client.search(q: @travel.arrivo.to_s, format: 'json', addressdetails: '1', accept_language: 'it')
 
 			# render html: @partenza == []
 		else
@@ -78,30 +67,37 @@ class TravelsController < ApplicationController
 
 	def create
 		@travel = Travel.new(params[:travel].permit!)
+		# @travel.update('partenza' => params[:address][:partenza])
+		@travel.update('partenza' => params[:address][:partenza])
+		@travel.update('ora_partenza' => params[:travel][:ora_partenza])
+		@travel.update('arrivo' => params[:address][:destinazione]) 
 		@travel.user_id = current_user.id
+		# @travel.arrivo = params[:address][:destinazione] 
 		
-		render html: params[:address]
+
+		# render html: params[:travel][:ora_partenza]
+
+		# @var = params[:address][:partenza]
 
 		# @client = OpenStreetMap::Client.new
+		# @partenza = @client.search(q: @var, format: 'json', addressdetails: '1', accept_language: 'it')
+		
+		# render html: "Luogo: " + @var + " Lat: " + @partenza[0]['lat'].to_s + " Lon: " + @partenza[0]['lon'].to_s
 		# @partenza_query
 		# 	if @travel.via_partenza != ""
 		# 		@partenza_query = @travel.via_partenza.to_s + ", " + @travel.citta_partenza.to_s
 		# 	else
 		# 		@partenza_query = @travel.citta_partenza.to_s
 		# 	end
-		# @partenza = @client.search(q: @partenza_query, format: 'json', addressdetails: '1', accept_language: 'it')
 
-		# if @partenza == []
-		# 	redirect_back(fallback_location: root_path)
-		# end
 
-		# if @travel.save
-        #     flash[:notice] = "Travel was added"
-        #     redirect_to root_path
-        # else
-        #     flash[:notice] = @travel.errors.full_messages
-        #     redirect_to root_path
-        # end
+		if @travel.save
+            flash[:notice] = "Travel was added"
+            redirect_to root_path
+        else
+            flash[:notice] = @travel.errors.full_messages
+            redirect_to root_path
+        end
 	end
 
 

@@ -7,7 +7,7 @@ class FindsController < ApplicationController
         @carri = @var[1]
         @data = @var[2].to_date
 
-        @travels = Travel.where('travels.data == ?', @data).where('travels.citta_partenza == ?', @cpart)       
+        @travels = Travel.where('travels.data == ?', @data).where("travels.partenza LIKE lower(?)", @cpart)       
     end
     
     

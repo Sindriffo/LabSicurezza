@@ -10,12 +10,12 @@
 <h1>Dettagli Viaggio</h1>
 <ul id="details">
   <li>
-    <strong>Citta di partenza:</strong>
-    <%= @travel.citta_partenza %>
+    <strong>Partenza:</strong>
+    <%= @travel.partenza %>
   </li>
   <li>
-    <strong>Citta di Arrivo:</strong>
-    <%= @travel.citta_arrivo %>
+    <strong>Arrivo:</strong>
+    <%= @travel.arrivo %>
   </li>
   <li>
     <strong>Data:</strong>
@@ -23,19 +23,7 @@
   </li>
   <li>
     <strong>Ora di partenza:</strong>
-    <%= @travel.ora_partenza %>
-  </li>
-  <li>
-    <strong>Ora di arrivo:</strong>
-    <%= @travel.ora_arrivo %>
-  </li>
-  <li>
-    <strong>Via di partenza:</strong>
-    <%= @travel.via_partenza %>
-  </li>
-  <li>
-    <strong>Via di arrivo:</strong>
-    <%= @travel.via_arrivo %>
+    <%= @travel.ora_partenza.hour.to_s + ":" + @travel.ora_partenza.min.to_s %>
   </li>
   <li>
     <strong>Prezzo:</strong>

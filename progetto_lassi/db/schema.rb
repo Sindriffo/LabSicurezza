@@ -37,13 +37,10 @@ ActiveRecord::Schema.define(version: 20200905085324) do
 
   create_table "travels", force: :cascade do |t|
     t.integer "user_id"
-    t.string "citta_partenza"
-    t.string "citta_arrivo"
+    t.string "partenza"
+    t.string "arrivo"
     t.date "data"
     t.time "ora_partenza"
-    t.time "ora_arrivo"
-    t.string "via_partenza"
-    t.string "via_arrivo"
     t.float "prezzo"
     t.integer "posti_disponibili"
     t.boolean "rated", default: false

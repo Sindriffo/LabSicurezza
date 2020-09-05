@@ -27,11 +27,11 @@
  
   <%# <input placeholder="Inserisci partenza ..." id="autocomplete_address" type="text" name="autocomplete[address]" /> %>
   <%= label :autocomplete_Adress, 'Partenza *' %>
-  <%= text_field :address, placeholder= "Inserisci partenza ...", id: "autocomplete_address", :required => true %>
+  <%= text_field :address, :partenza, id: "autocomplete_address", :required => true %>
   <br/>
   <br/>
   <%= label :autocomplete_Adress, 'Destinazione *' %>
-  <%= text_field :address, placeholder="Inserisci destinazione ...", id: "autocomplete_address2", :required => true %>
+  <%= text_field :address, :destinazione, id: "autocomplete_address2", :required => true %>
   <br/>
   <br/>
   <%= label :travel, :data, 'Data *' %>
