@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GooglePlaceAutocompleteEn</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="b1K0eobrjYVpdYdzXDFBj2JZdIAYHsryMxsAsVHOzEEXM4Peb6u3U4pnX4AApEwr2NDaUlkV9GfRSJnOEAH3Zg==" />
+    
+
+    <link rel="stylesheet" media="all" href="/assets/application-6a18350de10559b01ecdf733dbc78648ea56b2c71592ddab1fb44f5d320c171d.css" data-turbolinks-track="reload" />
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyALzZYQ2nAWk1utM4EJ7CV7dIsudKatlPc"></script>
+  </head>
+
+  <body>
+    <div class="flexbox">   
+ <h1>Autocomplete</h1>   
+ <form action="/autocompletes" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Pyy9rzg8bVYmO0IRRZDWyhJmGYqXPDXrq0TBu/jId3Zd5wx4qvKa5/vG08Ef99IXPqV39SUqg2VvmsMmmKIKNw==" />
+
+<div class="field">
+ <label for="autocomplete_Adress">Adress</label>
+ <input placeholder="Enter your adress" id="autocomplete_address" type="text" name="autocomplete[address]" />
+</div>
+
+<div class="field">
+ <label for="autocomplete_Channel number">Channel number</label>
+ <input id="street_number" type="number" name="autocomplete[street_number]" />
+</div>
+
+<div class="field">
+ <label for="autocomplete_Town">Town</label>
+ <input id="locality" type="text" name="autocomplete[locality]" />
+</div>
+ 
+<div class="field">
+ <label for="autocomplete_Name of the channel">Name of the channel</label>
+ <input id="route" type="text" name="autocomplete[route]" />
+</div>
+
+<div class="field">
+ <label for="autocomplete_Area">Area</label>
+ <input id="administrative_area_level_1" type="text" name="autocomplete[administrative_area_level_1]" />
+</div>
+
+<div class="field">
+ <label for="autocomplete_Country">Country</label>
+ <input id="country" type="text" name="autocomplete[country]" />
+</div>
+
+<div class="field">
+ <label for="autocomplete_Postal code">Postal code</label>
+ <input id="postal_code" type="number" name="autocomplete[postal_code]" />
+</div>
+
+<div class="actions">
+ <div class="btn waves-effect waves-light">
+  <input type="submit" name="commit" value="submit" data-disable-with="submit" />
+ </div>
+</div>
+</form>
+ <a href="/autocompletes">Back</a> 
+</div> 
+
+    <script src="/assets/application-5504204b62527167556750d43421a977ca3ab4249dac6e5eb6d71360ea54ba9f.js"></script>
+  </body>
+</html>

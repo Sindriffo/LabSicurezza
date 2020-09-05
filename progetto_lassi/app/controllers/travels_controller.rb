@@ -75,7 +75,7 @@ class TravelsController < ApplicationController
 		# @travel.arrivo = params[:address][:destinazione] 
 		
 
-		# render html: params[:travel][:ora_partenza]
+		render html: params
 
 		# @var = params[:address][:partenza]
 
@@ -91,13 +91,13 @@ class TravelsController < ApplicationController
 		# 	end
 
 
-		if @travel.save
-            flash[:notice] = "Travel was added"
-            redirect_to root_path
-        else
-            flash[:notice] = @travel.errors.full_messages
-            redirect_to root_path
-        end
+		# if @travel.save
+        #     flash[:notice] = "Travel was added"
+        #     redirect_to root_path
+        # else
+        #     flash[:notice] = @travel.errors.full_messages
+        #     redirect_to root_path
+        # end
 	end
 
 
