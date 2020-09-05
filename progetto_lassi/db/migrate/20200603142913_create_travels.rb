@@ -4,7 +4,9 @@ class CreateTravels < ActiveRecord::Migration[5.1]
       t.references 'user'
             
       t.string :partenza
+      t.string :area_partenza
       t.string :arrivo
+      t.string :area_arrivo
       t.date :data
       t.time :ora_partenza
       t.float :prezzo

@@ -14,10 +14,7 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 
   <!-- our javascript -->
-  <script type="text/javascript" src="/assets/js/gmaps.js"></script> %>
-
-
-  
+  <script type="text/javascript" src="/assets/js/gmaps.js"></script> %>  
 </head>
 
 
@@ -28,20 +25,12 @@
   <%# <input placeholder="Inserisci partenza ..." id="autocomplete_address" type="text" name="autocomplete[address]" /> %>
   <%= label :autocomplete_Adress, 'Partenza *' %>
   <%= text_field :address, :partenza, id: "autocomplete_address", :required => true %>
-  <%# <%= text_field :address, :area, id: "administrative_area_level_1"%> %>
   <br/>
   <br/>
   <%= label :autocomplete_Adress, 'Destinazione *' %>
-  <%= text_field :address, :destinazione, id: "autocomplete_address2", :required => true %>
-    <%# <%= text_field :address, :area, id: "administrative_area_level_2"%> %>
+  <%= text_field :address, :arrivo, id: "autocomplete_address2", :required => true %>
   <br/>
   <br/>
-
-  <%# <label for="autocomplete_Area">Area</label> %>
-  <%# <%= text_field :address, :area, id: "administrative_area_level_1", type: "hidden" %>
-
-
-
   <%= label :travel, :data, 'Data *' %>
   <%= date_field :travel, :data, :required => true,  min: Date.today.tomorrow %>
   <%= label :travel, :ora_partenza, 'Orario partenza *' %>

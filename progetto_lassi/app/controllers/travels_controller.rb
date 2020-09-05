@@ -48,14 +48,9 @@ class TravelsController < ApplicationController
 		
 
 			############################################# Open Street Maps Query
-
-
 			@client = OpenStreetMap::Client.new
 			@partenza = @client.search(q: @travel.partenza.to_s, format: 'json', addressdetails: '1', accept_language: 'it')
-			
 			@arrivo = @client.search(q: @travel.arrivo.to_s, format: 'json', addressdetails: '1', accept_language: 'it')
-
-			# render html: @partenza == []
 		else
 			render html: 'Travel does not exit'
 		end
@@ -70,18 +65,38 @@ class TravelsController < ApplicationController
 		# @travel.update('partenza' => params[:address][:partenza])
 		@travel.update('partenza' => params[:address][:partenza])
 		@travel.update('ora_partenza' => params[:travel][:ora_partenza])
-		@travel.update('arrivo' => params[:address][:destinazione]) 
+		@travel.update('arrivo' => params[:address][:arrivo]) 
 		@travel.user_id = current_user.id
 		# @travel.arrivo = params[:address][:destinazione] 
 		
 
-		render html: params
+		@part_query = params[:address][:partenza]
+		@arri_query = params[:address][:arrivo]
 
-		# @var = params[:address][:partenza]
 
-		# @client = OpenStreetMap::Client.new
-		# @partenza = @client.search(q: @var, format: 'json', addressdetails: '1', accept_language: 'it')
-		
+		@client = OpenStreetMap::Client.new
+		@partenza = @client.search(q: @part_query, format: 'json', accept_language: 'it')
+        @address = @client.reverse(format: 'json', lat: @partenza[0]['lat'], lon: @partenza[0]['lon'], accept_language: 'it')['address']
+
+        @area
+        if @address['county'] != nil
+            @area = @address['county'].to_s
+        else 
+            @area = @address['city'].to_s
+        end
+		@travel.update('area_partenza' => @area)
+
+
+		@arrivo = @client.search(q: @arri_query, format: 'json', accept_language: 'it')
+        @address = @client.reverse(format: 'json', lat: @arrivo[0]['lat'], lon: @arrivo[0]['lon'], accept_language: 'it')['address']
+        @area
+        if @address['county'] != nil
+            @area = @address['county'].to_s
+        else 
+            @area = @address['city'].to_s
+        end
+		@travel.update('area_arrivo' => @area)
+
 		# render html: "Luogo: " + @var + " Lat: " + @partenza[0]['lat'].to_s + " Lon: " + @partenza[0]['lon'].to_s
 		# @partenza_query
 		# 	if @travel.via_partenza != ""
@@ -91,13 +106,13 @@ class TravelsController < ApplicationController
 		# 	end
 
 
-		# if @travel.save
-        #     flash[:notice] = "Travel was added"
-        #     redirect_to root_path
-        # else
-        #     flash[:notice] = @travel.errors.full_messages
-        #     redirect_to root_path
-        # end
+		if @travel.save
+            flash[:notice] = "Travel was added"
+            redirect_to root_path
+        else
+            flash[:notice] = @travel.errors.full_messages
+            redirect_to root_path
+        end
 	end
 
 

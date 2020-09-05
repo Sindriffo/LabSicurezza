@@ -5,30 +5,64 @@ class FindsController < ApplicationController
         @var = params[:format].split("#")
         @cpart = @var[0]
         @carri = @var[1]
-        @data = @var[2].to_date
+        @data = @var[2]
 
-        @travels = Travel.where('travels.data == ?', @data).where("travels.partenza LIKE lower(?)", @cpart)       
+        @travels = Travel.all       
+
+        if @data != nil
+            @travels = @travels.where('travels.data == ?', @data.to_date)
+        end
+
+        if @cpart != ""
+            @travels = @travels.where("travels.area_partenza == ?", @cpart)
+        end
+
+        if @carri != ""
+            @travels = @travels.where("travels.area_arrivo == ?", @carri)
+        end
     end
     
     
     def create
         travel = params[:travel]
+        @cpart = ""
+        @carri = ""
         
-        @var = travel[:citta_partenza]
+
+        @part_query = travel[:partenza]
+        @arri_query = travel[:arrivo]
 
 		@client = OpenStreetMap::Client.new
-		@partenza = @client.search(q: @var, format: 'json', addressdetails: '1', accept_language: 'it')
-        @area = @client.reverse(format: 'json', lat: @partenza[0]['lat'], lon: @partenza[0]['lon'], accept_language: 'it')
 
-        render html: @area['address']["city"]
+        if @part_query != ""
+            @partenza = @client.search(q: @part_query, format: 'json', accept_language: 'it')
+            @address = @client.reverse(format: 'json', lat: @partenza[0]['lat'], lon: @partenza[0]['lon'], accept_language: 'it')['address']
 
-        ########################################### VARIABILI 
-        @cpart = travel[:citta_partenza]
-        @carri = travel[:citta_arrivo]
-        @data = Date.new travel["data(1i)"].to_i, travel["data(2i)"].to_i, travel["data(3i)"].to_i
-        ###########################################
+            if @address['county'] != nil
+                @cpart = @address['county'].to_s
+            else 
+                @cpart = @address['city'].to_s
+            end
+        end
+        
+        if @arri_query != ""
+            @partenza = @client.search(q: @arri_query, format: 'json', accept_language: 'it')
+            @address = @client.reverse(format: 'json', lat: @partenza[0]['lat'], lon: @partenza[0]['lon'], accept_language: 'it')['address']
 
-        # redirect_to finds_path(@cpart+"#"+@carri+"#"+@data.to_s)
+            if @address['county'] != nil
+                @carri = @address['county'].to_s
+            else 
+                @carri = @address['city'].to_s
+            end
+        end
+
+        # render html: travel
+        @data = ""
+        if travel['data'] != ""
+            @data = travel['data'].to_date
+        end
+
+        redirect_to finds_path(@cpart+"#"+@carri+"#"+@data.to_s)
     end
 
 

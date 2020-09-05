@@ -38,7 +38,9 @@ ActiveRecord::Schema.define(version: 20200905085324) do
   create_table "travels", force: :cascade do |t|
     t.integer "user_id"
     t.string "partenza"
+    t.string "area_partenza"
     t.string "arrivo"
+    t.string "area_arrivo"
     t.date "data"
     t.time "ora_partenza"
     t.float "prezzo"
