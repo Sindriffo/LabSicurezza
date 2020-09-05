@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require gmaps-auto-complete
  */
 
  /* Simple CSS styling for RottenPotatoes app */

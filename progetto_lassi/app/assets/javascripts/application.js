@@ -14,5 +14,6 @@
 //= require turbolinks
 //= require_tree .
 
+
 var L = require('leaflet');
 var K = require('leaflet-routing-machine-3.2.12');

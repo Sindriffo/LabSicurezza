@@ -66,6 +66,7 @@ class TravelsController < ApplicationController
 			@partenza = @client.search(q: @partenza_query, format: 'json', addressdetails: '1', accept_language: 'it')
 			@arrivo = @client.search(q: @arrivo_query, format: 'json', addressdetails: '1', accept_language: 'it')
 
+			# render html: @partenza == []
 		else
 			render html: 'Travel does not exit'
 		end
@@ -78,13 +79,27 @@ class TravelsController < ApplicationController
 	def create
 		@travel = Travel.new(params[:travel].permit!)
 		@travel.user_id = current_user.id
-		if @travel.save
-            flash[:notice] = "Travel was added" #"Movie #{@movie.title} was added"
-            redirect_to root_path
-        else
-            flash[:notice] = @travel.errors.full_messages
-            redirect_to root_path
-        end
+		
+		@client = OpenStreetMap::Client.new
+		@partenza_query
+			if @travel.via_partenza != ""
+				@partenza_query = @travel.via_partenza.to_s + ", " + @travel.citta_partenza.to_s
+			else
+				@partenza_query = @travel.citta_partenza.to_s
+			end
+		@partenza = @client.search(q: @partenza_query, format: 'json', addressdetails: '1', accept_language: 'it')
+
+		if @partenza == []
+			redirect_back(fallback_location: root_path)
+		end
+
+		# if @travel.save
+        #     flash[:notice] = "Travel was added"
+        #     redirect_to root_path
+        # else
+        #     flash[:notice] = @travel.errors.full_messages
+        #     redirect_to root_path
+        # end
 	end
 
 

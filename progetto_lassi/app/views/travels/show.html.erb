@@ -5,6 +5,8 @@
 <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 
 
+
+
 <h1>Dettagli Viaggio</h1>
 <ul id="details">
   <li>
@@ -48,6 +50,7 @@
 
   
 <div id='map' style='width: 600px; height: 400px;'></div>
+
 <script>
   var map = L.map('map').setView(['<%=@partenza[0]['lat']%>', '<%=@partenza[0]['lon']%>'], 10);
   
@@ -60,9 +63,18 @@
 		zoomOffset: -1
 	}).addTo(map);
 
-  var partenza = L.marker(['<%=@partenza[0]['lat']%>', '<%=@partenza[0]['lon']%>']).addTo(map);
-  var arrivo = L.marker(['<%=@arrivo[0]['lat']%>', '<%=@arrivo[0]['lon']%>']).addTo(map);
+  var partenza = L.marker(['<%=@partenza[0]['lat']%>', '<%=@partenza[0]['lon']%>']).
+                    addTo(map).bindTooltip("Partenza").openTooltip();
+
+  var arrivo = L.marker(['<%=@arrivo[0]['lat']%>', '<%=@arrivo[0]['lon']%>']).
+                    addTo(map).bindTooltip("Arrivo").openTooltip();
   var group = new L.featureGroup([partenza, arrivo]);
+
+  var latlngs = [
+      ['<%=@partenza[0]['lat']%>', '<%=@partenza[0]['lon']%>'],
+      ['<%=@arrivo[0]['lat']%>', '<%=@arrivo[0]['lon']%>']
+  ];
+  L.polyline(latlngs).addTo(map);
 
   map.fitBounds(group.getBounds());
 </script>
