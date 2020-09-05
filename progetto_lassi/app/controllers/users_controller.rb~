@@ -23,8 +23,6 @@ class UsersController < ApplicationController
 	def update
 		id = params[:id]
 		@user = User.find(id)
-
-		
 		
 		if @user.sospeso?
 			@user.sospeso = false

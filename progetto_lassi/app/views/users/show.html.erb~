@@ -37,7 +37,7 @@
 <% end %>
 <br/>
 <td>
-  <%= link_to "Modifica account", modificas_path() %>
+  <%= link_to "Modifica account", edit_modifica_path() %>
 </td>
 <br/>
 <td>
