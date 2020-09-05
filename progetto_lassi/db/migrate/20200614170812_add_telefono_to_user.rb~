@@ -8,6 +8,5 @@ class AddTelefonoToUser < ActiveRecord::Migration[5.1]
     add_column :users, :ratingnum, :integer, default:0 
     add_column :users, :sospeso, :boolean, default:false
     add_column :users, :admin, :boolean, default:false
-    add_column :users, :image, :string 
   end
 end

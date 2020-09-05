@@ -1,0 +1,32 @@
+%h1 Profilo Utente
+
+%ul#user
+  %li
+    %strong Nome:
+    = @user.nome
+  %li
+    %strong Cognome:
+    = @user.cognome
+  %li
+    %strong Email:
+    = @user.email
+  %li
+    %strong Telefono:
+    = @user.telefono
+  %li
+    %strong Rating:
+    - if @user.rating != nil
+      = "%.1f" % @user.rating
+
+
+%br
+
+- if current_user.id == params[:id].to_i
+  %tr
+    %td= link_to ("Cambio password"), edit_user_registration_path
+  %br
+
+%br
+%td= link_to "Torna alla homepage", root_path()
+
+
