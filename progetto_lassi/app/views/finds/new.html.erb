@@ -1,0 +1,18 @@
+<h2>Crea un nuovo viaggio</h2>
+<%= form_tag finds_path, :method => :post do %>
+  <%= label :autocomplete_Adress, 'Partenza' %>
+  <%= text_field :address, :partenza, id: "autocomplete_address" %>
+  <br/>
+  <br/>
+  <%= label :autocomplete_Adress, 'Destinazione' %>
+  <%= text_field :address, :arrivo, id: "autocomplete_address2" %>
+  <br/>
+  <br/>
+  <%= label :travel, :data, 'Data' %>
+  <%= date_field :address, :data, min: Date.today.tomorrow %>
+  <br/>
+  <br/>
+  <%= submit_tag 'Conferma'  %>
+  <br/>
+  <br/>
+<% end %>

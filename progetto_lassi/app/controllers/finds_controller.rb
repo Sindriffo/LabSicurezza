@@ -1,30 +1,33 @@
 class FindsController < ApplicationController
 
-
     def index
         @var = params[:format].split("#")
         @cpart = @var[0]
         @carri = @var[1]
         @data = @var[2]
 
-        @travels = Travel.all       
 
-        if @data != nil
+        @joinedtravels = Travel.joins(:joinedtravels).where('joinedtravels.user_id == ?', current_user.id)
+
+        @travels = Travel.where('travels.user_id != ?', current_user.id).where('travels.posti_disponibili > ?', 0)
+        @travels -= @joinedtravels
+
+        if @data != nil && @data != "" 
             @travels = @travels.where('travels.data == ?', @data.to_date)
         end
-
-        if @cpart != ""
+        
+        if @cpart != nil && @cpart != ""
             @travels = @travels.where("travels.area_partenza == ?", @cpart)
         end
-
-        if @carri != ""
+        
+        if @carri != nil && @carri != ""
             @travels = @travels.where("travels.area_arrivo == ?", @carri)
         end
     end
     
     
     def create
-        travel = params[:travel]
+        travel = params[:address]
         @cpart = ""
         @carri = ""
         
@@ -56,7 +59,6 @@ class FindsController < ApplicationController
             end
         end
 
-        # render html: travel
         @data = ""
         if travel['data'] != ""
             @data = travel['data'].to_date
@@ -64,7 +66,5 @@ class FindsController < ApplicationController
 
         redirect_to finds_path(@cpart+"#"+@carri+"#"+@data.to_s)
     end
-
-
 
 end
