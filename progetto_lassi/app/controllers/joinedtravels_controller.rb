@@ -47,7 +47,7 @@ class JoinedtravelsController < ApplicationController
 			@travel = Travel.find(id)
 			@travel.posti_disponibili -= 1
 			@travel.save
-			redirect_to travels_path()
+			redirect_to joinedtravels_path()
 		end
 		
 		

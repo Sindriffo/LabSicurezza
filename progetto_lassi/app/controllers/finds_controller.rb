@@ -8,10 +8,10 @@ class FindsController < ApplicationController
 
 
         @joinedtravels = Travel.joins(:joinedtravels).where('joinedtravels.user_id == ?', current_user.id)
-
         @travels = Travel.where('travels.user_id != ?', current_user.id).where('travels.posti_disponibili > ?', 0)
-        @travels -= @joinedtravels
 
+        
+        # render html: @travels
         if @data != nil && @data != "" 
             @travels = @travels.where('travels.data == ?', @data.to_date)
         end
@@ -23,6 +23,7 @@ class FindsController < ApplicationController
         if @carri != nil && @carri != ""
             @travels = @travels.where("travels.area_arrivo == ?", @carri)
         end
+        @travels -= @joinedtravels
     end
     
     

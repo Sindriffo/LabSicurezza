@@ -18,18 +18,13 @@ class TravelsController < ApplicationController
 			else
 				
 				#All travels created from other users
-				@other_user_travels = Travel.where('travels.user_id != ?', @user.id).where('travels.data >= ?', DateTime.now.midnight).where('travels.posti_disponibili > ?', 0)
+				@travels = Travel.where('travels.user_id != ?', @user.id).where('travels.data >= ?', DateTime.now.midnight).where('travels.posti_disponibili > ?', 0)
 
 				#All travels the user joined
 				@joined_travels = Travel.joins(:joinedtravels).where('joinedtravels.user_id == ?', @user.id).where('travels.posti_disponibili > ?', 0)
 
 
-				@travels = []
-				@other_user_travels.each do |travel|
-					if !(@joined_travels.include? travel)
-						@travels << travel
-					end
-				end		
+				@travels -= @joined_travels
 			end
 
 			#Future NOT joined travels
