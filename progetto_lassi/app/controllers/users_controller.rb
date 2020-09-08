@@ -49,4 +49,17 @@ class UsersController < ApplicationController
 		redirect_to users_path
 	end
 
+	def edit
+		id = params[:id]
+		@user = User.find(id)
+
+		if @user.admin?
+			@user.admin = false
+		else
+			@user.admin = true
+		end
+
+		@user.save
+		redirect_to users_path
+	end
 end
