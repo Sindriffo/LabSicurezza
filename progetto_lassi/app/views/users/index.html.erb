@@ -1,0 +1,89 @@
+<h1>Lista utenti</h1>
+<table id="users">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Rating</th>
+      <th>Data Registrazione</th>
+      <th>Sospeso</th>
+      <th></th>
+      <th></th>
+      <% if current_user.super_admin?  %>
+        <th></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody></tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= link_to (user.nome + " " + user.cognome), user_path(user) %>
+      </td>
+      <td>
+        <%= user.email %>
+      </td>
+      <% if user.rating != nil %>
+        <td>
+          <%= "%.1f" % user.rating %>
+        </td>
+      <% else  %>
+        <td>
+          <%= "nessun rating" %>
+        </td>
+      <% end %>
+      <td>
+        <%= user.created_at %>
+      </td>
+      <td>
+        <%= user.sospeso    %>
+      </td>
+      <% if user.admin? %>
+        <% if user.super_admin? %>
+          <td>
+            <%= "SUPER ADMIN" %>
+          </td>
+          <td>
+            <%= "SUPER ADMIN" %>
+          </td>
+        <% else %>
+          <td>
+            <%= "ADMIN" %>
+          </td>
+          <td>
+            <%= "ADMIN" %>
+          </td>
+        <% end %>
+        <% if current_user.super_admin? %>
+          <td>
+            <%= button_to "Converti a utente", edit_user_path(user), :data => {:confirm => "Vuoi convertire l'account a utente semplice?"}, :method => :get %>
+          </td>
+        <% end %>
+      <% else %>
+        <td>
+          <%= button_to "Cancella utente", user_path(user), :data => {:confirm => "Vuoi cancellare questo utente?"}, :method => :delete %>
+        </td>
+        <% if user.sospeso? %>
+          <td>
+            <%= button_to "Sblocca utente", user_path(user), :data => {:confirm => "Vuoi sbloccare questo utente?"}, :method => :put %>
+          </td>
+        <% else %>
+          <td>
+            <%= button_to "Blocca utente", user_path(user), :data => {:confirm => "Vuoi bloccare questo utente?"}, :method => :put %>
+          </td>
+        <% end %>
+        <% if current_user.super_admin? && !user.sospeso? %>
+          <td>
+            <%= button_to "Converti ad admin", edit_user_path(user), :data => {:confirm => "Vuoi convertire questo utente ad admin?"}, :method => :get %>
+          </td>
+        <% end %>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+<% # %br %>
+<% # %br %>
+<br/>
+<td>
+  <%= link_to "Torna alla homepage", root_path() %>
+</td>
