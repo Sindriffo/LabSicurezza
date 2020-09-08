@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20200905085324) do
     t.integer "ratingnum", default: 0
     t.boolean "sospeso", default: false
     t.boolean "admin", default: false
+    t.boolean "super_admin", default: false
     t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

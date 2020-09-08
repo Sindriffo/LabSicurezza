@@ -11,7 +11,8 @@
       %th Sospeso
       %th
       %th
-      %th
+      -if current_user.super_admin?
+        %th
 
 
   %tbody
@@ -30,14 +31,16 @@
         -# %td= link_to "Cancella utente", user_path(user), :method => :delete
         %td= "ADMIN"
         %td= "ADMIN"
-        %td= button_to "Converti a utente", edit_user_path(user), :data => {:confirm => "Vuoi convertire questo utente a semplice?"}, :method => :get
+        -if current_user.super_admin?
+          %td= button_to "Converti a utente", edit_user_path(user), :data => {:confirm => "Vuoi convertire questo utente a semplice?"}, :method => :get
       -else
         %td= button_to "Cancella utente", user_path(user), :data => {:confirm => "Vuoi cancellare questo utente?"}, :method => :delete
         -if user.sospeso?
           %td= button_to "Sblocca utente", user_path(user), :data => {:confirm => "Vuoi bloccare questo utente?"}, :method => :put
         -else
           %td= button_to "Blocca utente", user_path(user), :data => {:confirm => "Vuoi bloccare questo utente?"}, :method => :put
-        %td= button_to "Converti ad admin", edit_user_path(user), :data => {:confirm => "Vuoi convertire questo utente ad admin?"}, :method => :get
+        -if current_user.super_admin?
+          %td= button_to "Converti ad admin", edit_user_path(user), :data => {:confirm => "Vuoi convertire questo utente ad admin?"}, :method => :get
           
 -# %br
 -# %br
