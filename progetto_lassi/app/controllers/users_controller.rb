@@ -9,6 +9,9 @@ class UsersController < ApplicationController
 	def show
 		id = params[:id]
 		@user = User.find(id)
+		if !current_user.admin? && id != current_user.id.to_s && @user.admin?
+			redirect_to root_path
+		end 
 	end	
 
 	def destroy
