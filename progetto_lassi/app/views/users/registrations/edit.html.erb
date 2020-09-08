@@ -12,39 +12,44 @@
     <%= f.label :cognome %>
     <%= f.text_field :cognome, autofocus: true, autocomplete: "cognome" %>
   </div>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+
   <div class="field">
     <%= f.label :telefono %><br />
     <%= f.telephone_field :telefono, autofocus: true, autocomplete: "telefono" %>
   </div>
-  <br>
-
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>In attesa di conferma per: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-
-  <div class="field">
-    <%= f.label :password %> <i>(lascia vuoto se non desideri cambiare password)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <em> (minimo <%= @minimum_password_length %> caratteri)</em>
+  
+  <% if current_user.provider != "facebook"  %>
+    <br>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>In attesa di conferma per: <%= resource.unconfirmed_email %></div>
     <% end %>
-  </div>
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Conferma Password" %>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :password %> <i>(lascia vuoto se non desideri cambiare password)</i><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+      <% if @minimum_password_length %>
+        <em> (minimo <%= @minimum_password_length %> caratteri)</em>
+      <% end %>
+    </div>
 
-  <div class="field">
-    <%= f.label :current_password, "Password attuale" %> <i>(inserisci la password attuale per applicare le modifiche)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :password_confirmation, "Conferma Password" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :current_password, "Password attuale" %> <i>(inserisci la password attuale per applicare le modifiche)</i><br />
+      <%= f.password_field :current_password, autocomplete: "current-password" %>
+    </div>
+  <% else%>
+  <i>(Gli altri campi dipendono dall'account facebok)</i>
+  <br>
+  <br>
+  <% end %>
 
   <div class="field">
     <%= label :user, :image, "Foto Profilo" %>
