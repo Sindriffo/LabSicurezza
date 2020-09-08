@@ -14,6 +14,22 @@ class UsersController < ApplicationController
 	def destroy
 		id = params[:id]
 		@user = User.find(id)
+
+		@all_joined_travels = Joinedtravel.where('joinedtravels.user_id == ?', id)
+		@all_joined_travels.each do |jt|
+			jt.destroy
+		end
+
+		@all_created_travels = Travel.where('travels.user_id == ?', id)
+		@all_created_travels.each do |ct|
+			@all_joined_travels = Joinedtravel.where('joinedtravels.travel_id == ?', ct.id)
+			@all_joined_travels.each do |jt|
+				jt.destroy
+			end
+			
+			ct.destroy
+		end
+
 		@user.destroy
         flash[:notice] = "User deleted."
 		redirect_to users_path
