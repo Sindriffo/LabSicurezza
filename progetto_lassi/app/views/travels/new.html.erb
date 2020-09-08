@@ -1,3 +1,7 @@
+<head>
+    <%= javascript_include_tag 'application' %>
+</head>
+
 <h2>Crea un nuovo viaggio</h2>
 <%= form_tag travels_path, :method => :post do %>
    <%= label :autocomplete_Adress, 'Partenza *' %>

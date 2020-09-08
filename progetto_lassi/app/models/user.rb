@@ -14,11 +14,7 @@ class User < ApplicationRecord
       user.email = auth.info.email
       @nome = auth.info.name.split(" ")
       user.nome = @nome[0]
-      # user.cognome = @nome[1]
-      user.cognome = auth
-      # File.open("auth.info.image") do |f|
-      #   user.image = f
-      # end
+      user.cognome = @nome[1]
       user.password = Devise.friendly_token[0,20]
     end
   end

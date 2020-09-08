@@ -24,7 +24,8 @@
         = "€"
       %td= travel.posti_disponibili  
       %td= link_to "Dettagli Viaggio", travel_path(travel) 
-      %td= link_to "Aggiungi", new_joinedtravel_path(travel)
+      %td= button_to "Aggiungi", new_joinedtravel_path(travel), :data => {:confirm => "Vuoi aggiungerti a questo viaggio?"}, :method => :get
+ 
 
 -# %br
 -# %br

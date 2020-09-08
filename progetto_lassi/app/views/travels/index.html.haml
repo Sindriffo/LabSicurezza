@@ -47,7 +47,8 @@
           = "€"
         %td= travel.posti_disponibili  
         %td= link_to "Dettagli Viaggio", travel_path(travel)
-        %td= link_to ('Cancella questo viaggio'), travel_path(travel), :method => :delete 
+        -# %td= link_to 'Cancella questo viaggio', travel_path(travel), :method => :delete
+        %td= button_to "Cancella questo viaggio", travel_path(travel), :data => {:confirm => "Vuoi cancellare questo viaggio?"}, :method => :delete
 
   -# %br
   -# %br
@@ -80,8 +81,9 @@
           = travel.prezzo
           = "€"
         %td= travel.posti_disponibili  
-        %td= link_to "Dettagli Viaggio", travel_path(travel) 
-        %td= link_to "Aggiungi", new_joinedtravel_path(travel)
+        %td= link_to "Dettagli Viaggio", travel_path(travel)
+        %td= button_to "Aggiungi", new_joinedtravel_path(travel), :data => {:confirm => "Vuoi aggiungerti a questo viaggio?"}, :method => :get
+ 
 
   -# %br
   -# %br

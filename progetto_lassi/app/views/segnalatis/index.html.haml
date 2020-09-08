@@ -32,11 +32,11 @@
         %td= "ADMIN"
         %td= "ADMIN"
       -else
-        %td= link_to "Cancella utente", segnalati_path(user), :method => :delete
+        %td= button_to "Cancella utente", segnalati_path(user), :data => {:confirm => "Vuoi cancellare questo utente?"}, :method => :delete
         -if user.sospeso?
-          %td= link_to "Sblocca utente", segnalati_path(user), :method => :put
+          %td= button_to "Sblocca utente", segnalati_path(user), :data => {:confirm => "Vuoi bloccare questo utente?"}, :method => :put
         -else
-          %td= link_to "Sospendi utente", segnalati_path(user), :method => :put
+          %td= button_to "Blocca utente", segnalati_path(user), :data => {:confirm => "Vuoi bloccare questo utente?"}, :method => :put
           
 -# %br
 -# %br

@@ -23,7 +23,8 @@
 					= travel.prezzo
 					= "€"				
 				%td= link_to ("Dettagli Viaggio"), travel_path(travel) 
-				%td= link_to ("Lascia una recensione"), reviews_path(travel)
+				%td= button_to "Lascia una recensione", reviews_path(travel), :method => :get
+
 
 
 %h2 Viaggi programmati
@@ -48,7 +49,7 @@
 					= travel.prezzo
 					= "€"
 				%td= link_to ("Dettagli Viaggio"), travel_path(travel) 
-				%td= link_to ("Rimuovi prenotazione"), joinedtravel_path(travel), :method => :delete
+				%td= button_to ("Rimuovi prenotazione"), joinedtravel_path(travel), :data => {:confirm => "Vuoi rimovere la prenotazione da questo viaggio?"}, :method => :delete
 
 %h2 Viaggi creati
 %table#travels
@@ -73,7 +74,7 @@
 					= travel.prezzo
 					= "€"
 				%td= link_to ("Dettagli Viaggio"), travel_path(travel)
-				%td= link_to ('Cancella questo viaggio'), travel_path(travel), :method => :delete
+				%td= button_to ('Cancella questo viaggio'), travel_path(travel), :data => {:confirm => "Vuoi cancellare questo viaggio?"}, :method => :delete
 %br
 %td= link_to "Torna alla homepage", root_path()
 
