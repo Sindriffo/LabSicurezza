@@ -32,15 +32,11 @@
 <% if current_user.id == params[:id].to_i %>
   <tr>
     <td>
-      <%= link_to ("Cambio password"), edit_user_registration_path %>
+      <%= link_to ("Modifica account"), edit_user_registration_path %>
     </td>
   </tr>
   <br/>
 <% end %>
-<br/>
-<td>
-  <%= link_to "Modifica account", modificas_path() %>
-</td>
 <br/>
 <td>
   <%= link_to "Torna alla homepage", root_path() %>

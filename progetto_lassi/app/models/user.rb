@@ -7,11 +7,18 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable, 
 	 :omniauthable, :omniauth_providers => [:facebook]
 
- mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageUploader
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
+      @nome = auth.info.name.split(" ")
+      user.nome = @nome[0]
+      # user.cognome = @nome[1]
+      user.cognome = auth
+      # File.open("auth.info.image") do |f|
+      #   user.image = f
+      # end
       user.password = Devise.friendly_token[0,20]
     end
   end

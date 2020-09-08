@@ -4,12 +4,12 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
 
-<div class="field">
+  <div class="field">
     <%= f.label :nome %><br />
     <%= f.text_field :nome, autofocus: true, autocomplete: "nome" %>
   </div>
 
-<div class="field">
+  <div class="field">
     <%= f.label :cognome %><br />
     <%= f.text_field :cognome, autofocus: true, autocomplete: "cognome" %>
   </div>
@@ -34,7 +34,7 @@
   </div>
 
 
-<div class="field">
+  <div class="field">
     <%= f.label :telefono %><br />
     <%= f.telephone_field :telefono, autofocus: true, autocomplete: "telefono" %>
   </div>
@@ -43,7 +43,6 @@
 	<%= f.label :image %><br />
     <%= f.file_field :image %>
   </div>
-
 
 
 <br>
