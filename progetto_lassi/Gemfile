@@ -47,6 +47,9 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
+
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
   gem 'selenium-webdriver'
 end
 
@@ -68,3 +71,12 @@ gem 'jquery-rails'
 gem "geocoder"
 gem "figaro"
 gem 'gmaps-autocomplete-rails'
+#per i test:
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
+  
+ 
+  gem 'rails-controller-testing'
+end

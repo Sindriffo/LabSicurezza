@@ -1,0 +1,370 @@
+current directory: /home/johnny/Desktop/sicurezza/LabSicurezza/progetto_lassi/vendor/bundle/ruby/2.4.0/gems/ffi-1.13.0/ext/ffi_c
+/home/johnny/.rvm/rubies/ruby-2.4.1/bin/ruby -I /home/johnny/.rvm/rubies/ruby-2.4.1/lib/ruby/site_ruby/2.4.0 -r ./siteconf20200908-7024-1lxxw00.rb extconf.rb
+checking for ffi.h... yes
+checking for ffi_call() in -lffi... yes
+checking for ffi_closure_alloc()... yes
+checking for ffi_prep_cif_var()... yes
+checking for ffi_raw_call()... yes
+checking for ffi_prep_raw_closure()... yes
+creating extconf.h
+creating Makefile
+
+current directory: /home/johnny/Desktop/sicurezza/LabSicurezza/progetto_lassi/vendor/bundle/ruby/2.4.0/gems/ffi-1.13.0/ext/ffi_c
+make "DESTDIR=" clean
+
+current directory: /home/johnny/Desktop/sicurezza/LabSicurezza/progetto_lassi/vendor/bundle/ruby/2.4.0/gems/ffi-1.13.0/ext/ffi_c
+make "DESTDIR="
+compiling AbstractMemory.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from AbstractMemory.c:43:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from AbstractMemory.c:43:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling ArrayType.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from ArrayType.c:30:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from ArrayType.c:30:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling Buffer.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Buffer.c:39:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Buffer.c:39:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling Call.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Call.c:45:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Call.c:45:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling ClosurePool.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from ClosurePool.c:52:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from ClosurePool.c:52:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling DynamicLibrary.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from DynamicLibrary.c:43:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from DynamicLibrary.c:43:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling Function.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Function.c:49:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Function.c:49:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling FunctionInfo.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from FunctionInfo.c:44:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from FunctionInfo.c:44:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling LastError.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from LastError.c:43:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from LastError.c:43:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling LongDouble.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from LongDouble.h:33,
+                 from LongDouble.c:1:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from LongDouble.h:33,
+                 from LongDouble.c:1:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling MappedType.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from MappedType.c:30:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from MappedType.c:30:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling MemoryPointer.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from MemoryPointer.c:39:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from MemoryPointer.c:39:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling MethodHandle.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from MethodHandle.c:48:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from MethodHandle.c:48:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling Platform.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Platform.c:41:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Platform.c:41:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling Pointer.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Pointer.c:38:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Pointer.c:38:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling Struct.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Struct.c:40:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Struct.c:40:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling StructByValue.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from StructByValue.c:43:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from StructByValue.c:43:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling StructLayout.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from StructLayout.c:41:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from StructLayout.c:41:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling Thread.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Thread.h:39,
+                 from Thread.c:49:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Thread.h:39,
+                 from Thread.c:49:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling Type.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Type.c:35:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Type.c:35:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling Types.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Types.c:32:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Types.c:32:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling Variadic.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Variadic.c:43:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from Variadic.c:43:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+compiling ffi.c
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from ffi.c:33:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:2005,
+                 from /home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby.h:33,
+                 from ffi.c:33:
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/home/johnny/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+linking shared-object ffi_c.so
+
+current directory: /home/johnny/Desktop/sicurezza/LabSicurezza/progetto_lassi/vendor/bundle/ruby/2.4.0/gems/ffi-1.13.0/ext/ffi_c
+make "DESTDIR=" install
+/usr/bin/install -m 0755 ffi_c.so ./.gem.20200908-7024-9358c0
