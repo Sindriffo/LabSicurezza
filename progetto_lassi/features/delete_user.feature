@@ -1,7 +1,7 @@
-Feature: Delete a travel
-    I want to delete a travel as admin
+Feature: Delete a user
+    I want to delete a user as admin
 
-    Scenario: Delete a travel
+    Scenario: Delete a user
         
         Given a valid admin
         When I am on the login page 
@@ -15,8 +15,10 @@ Feature: Delete a travel
         When I follow "Lista utenti" 
         Then I should be on users
         
-        
-        Given I am on Lista utenti
-        And a first user
-        And I press "Cancella Utente"
+        Given a valid user
+        When I am on Lista utenti
+        And I press "Cancella utente"
+        Then I should be on users
+
+
         

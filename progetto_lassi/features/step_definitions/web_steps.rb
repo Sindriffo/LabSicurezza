@@ -101,34 +101,8 @@ Given /^a valid user$/ do
            })
   
 end
-Given /^a valid location$/ do
-  @location = Location.create!({
-            :name=> "testloc",
-            :long=> 12.442535,
-            :lat=>41.934373,
-            :street=> "Via Luigi Credaro, Roma",
-            :status=>"accepted",
-            :user_id=>@user.id
-           })
-  @location.categories << @categoryright
-  @locationwrong = Location.create!({
-            :name=> "testlocwrong",
-            :long=> 12.442536,
-            :lat=>41.934376,
-            :street=> "Via San Godenzo, Roma",
-            :status=>"accepted",
-            :user_id=>@user.id
-           })
-  @locationwrong.categories << @categorywrong
-end
 
-Given /^a logged in user$/ do
-  Given "a valid user"
-  visit signin_url
-  fill_in "Email", :with => "test@hotmail.com"
-  fill_in "Password", :with => "12345678"
-  click_button "Login"
-end
+
 
   When /^(?:|I )check a first "([^"]*)"$/ do |field|
   check(field + @c1.id.to_s)
