@@ -1,6 +1,6 @@
-Feature: I want to add "new travel"
+Feature: I want to join "a travel"
 
-Scenario: new travel
+Scenario: join a travel
 	 Given a valid user
         When I am on the login page 
         And I fill in "user_email" with "prova33@example.it" 
@@ -9,15 +9,12 @@ Scenario: new travel
         Then I should be on the home page
         
         Given I am on the home page
-        When I follow "Offri un passaggio"
-        Then I should be on the new travels
+        When I follow "Viaggi disponibili"
+        Then I should be on travels
         
-        Given I am on the new travels
+        
+        Given I am on travels
         Given a valid travel
-        And I fill in "autocomplete_address" with "Roma" 
-        And I fill in "autocomplete_address2" with "Milano"
-        And I fill in "travel_data" with "12/12/2020" 
-        And I fill in "travel_ora_partenza" with "10:00"
-        And I fill in "travel_prezzo" with "12" 
-        And I press "Conferma"
+        When I press "Aggiungi"
+        
         Then I should be on the home page

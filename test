@@ -1,0 +1,13 @@
+Test di unita': 1. Modello Location 2. Modello Category
+
+Test funzionali: 1. Controller Location 2. Controller Category 3. Controller Gathering
+
+Test di integrazione: 1. Accettazione/Rifiuto di un locale (da parte di un Admin) 2. Scelta categorie preferite (da parte di uno user) 3. Aggiungi locale ai preferiti (da parte di uno user) 4. Matching locations (da parte di uno user)
+
+
+Test di unità: 1 Modello User 2. Modello Travel
+
+Test funzionali: 1 Controller User 2. Controller Travel
+
+
+Test di intregrazione: 1. eliminazione utente (da parte di un Admin) 2. Aggiunta viaggio (da parte di un user)

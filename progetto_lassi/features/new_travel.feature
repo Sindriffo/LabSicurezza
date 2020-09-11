@@ -9,9 +9,15 @@ Scenario: new travel
         Then I should be on the home page
         
         Given I am on the home page
-        When I follow "Viaggi disponibili"
-        Then I should be on travels
+        When I follow "Offri un passaggio"
+        Then I should be on the new travels
         
-        Given I am on travels
-        And I press "Aggiungi"
-        And I press "ok"
+        Given I am on the new travels
+        Given a valid travel
+        And I fill in "autocomplete_address" with "Roma" 
+        And I fill in "autocomplete_address2" with "Milano"
+        And I fill in "travel_data" with "12/12/2020" 
+        And I fill in "travel_ora_partenza" with "10:00"
+        And I fill in "travel_prezzo" with "12" 
+        And I press "Conferma"
+        Then I should be on the home page
