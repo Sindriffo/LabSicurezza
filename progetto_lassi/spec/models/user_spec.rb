@@ -26,6 +26,12 @@ RSpec.describe User, type: :model do
       user=create(:user)
       expect(user).to be_valid
    end   
+
+   it 'cambio mail' do
+	user=create(:user)
+	user.email='topolino@topo.it'
+	expect(user.email)=='topolino@topo.it'
+   end
    end
 
   

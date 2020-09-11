@@ -7,15 +7,14 @@ RSpec.describe Travel, type: :model do
         
     it "cambio posti" do
       travel=create(:travel)
-      travel.posti_disponibili=(travel.posti_disponibili)-2
-      expect(travel.posti_disponibili)==1
+      travel.posti_disponibili=(travel.posti_disponibili)-1
+      expect(travel.posti_disponibili)==2
 
   end
   it "valid travel" do
     travel=create(:travel)
    expect(travel).to be_valid
  end
-
 
 
 end
