@@ -27,9 +27,10 @@
       <%= f.label :email %>
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
+    <br>
 
     <div class="field">
-      <%= f.label :password %> <i>(lascia vuoto se non desideri cambiare password)</i><br />
+      <%= f.label :password, "Nuova Password" %> <i>(lascia vuoto se non desideri cambiare password)</i><br />
       <%= f.password_field :password, autocomplete: "new-password" %>
       <% if @minimum_password_length %>
         <em> (minimo <%= @minimum_password_length %> caratteri)</em>
@@ -50,7 +51,7 @@
   <br>
   <br>
   <% end %>
-
+  <br>
   <div class="field">
     <%= label :user, :image, "Foto Profilo" %>
     <%= file_field :user, :image %><br>
