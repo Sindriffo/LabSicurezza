@@ -1,9 +1,0 @@
-
-
-Test di unità: 1 Modello User 2. Modello Travel
-
-Test funzionali: 1 Controller User 2. Controller Travel
-
-
-Test di intregrazione: 1. eliminazione utente (da parte di un Admin)
- 2. Aggiunta viaggio (da parte di un user)
