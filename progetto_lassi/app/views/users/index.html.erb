@@ -23,21 +23,36 @@
       <td>
         <%= user.email %>
       </td>
-      <% if user.rating != nil %>
+      
+      <% if user.admin? %>
         <td>
-          <%= "%.1f" % user.rating %>
+          <%= "ADMIN" %>
         </td>
       <% else  %>
-        <td>
-          <%= "nessun rating" %>
-        </td>
+        <% if user.rating != nil %>
+          <td>
+            <%= "%.1f" % user.rating %>
+          </td>
+        <% else  %>
+          <td>
+            <%= "nessun rating" %>
+          </td>
+        <% end %>
       <% end %>
       <td>
         <%= user.created_at %>
       </td>
-      <td>
-        <%= user.sospeso    %>
-      </td>
+
+      <% if user.admin? %>
+        <td>
+          <%= "ADMIN" %>
+        </td>
+      <% else  %>
+        <td>
+          <%= user.sospeso %>
+        </td>
+      <% end %>
+
       <% if user.admin? %>
         <% if user.super_admin? %>
           <td>
