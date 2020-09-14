@@ -25,9 +25,15 @@
       </td>
       
       <% if user.admin? %>
-        <td>
-          <%= "ADMIN" %>
-        </td>
+        <% if user.super_admin? %> 
+          <td>
+            <%= "SUPER ADMIN" %>
+          </td>
+        <% else  %>
+          <td>
+            <%= "ADMIN" %>
+          </td>
+        <% end %>
       <% else  %>
         <% if user.rating != nil %>
           <td>
@@ -44,10 +50,16 @@
       </td>
 
       <% if user.admin? %>
-        <td>
-          <%= "ADMIN" %>
-        </td>
-      <% else  %>
+        <% if user.super_admin? %> 
+          <td>
+            <%= "SUPER ADMIN" %>
+          </td>
+        <% else  %>
+          <td>
+            <%= "ADMIN" %>
+          </td>
+        <% end %>
+      <% else %>
         <td>
           <%= user.sospeso %>
         </td>
