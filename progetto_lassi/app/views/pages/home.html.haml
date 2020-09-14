@@ -1,6 +1,6 @@
 - if current_user.admin? 
 	- if current_user.super_admin?
-		%h1= "Pagina dello Super Admin " + current_user.nome.to_s + " " + current_user.cognome.to_s
+		%h1= "Pagina del Super Admin " + current_user.nome.to_s + " " + current_user.cognome.to_s
 	-else
 		%h1= "Pagina dell'Admin " + current_user.nome.to_s + " " + current_user.cognome.to_s
 
