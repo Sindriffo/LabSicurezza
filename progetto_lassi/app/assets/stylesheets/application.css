@@ -30,39 +30,63 @@ html, body {
     margin: 0;
     padding: 0 20px 20px;
   }
-  a {
+
+  a:link,  a:visited{
+    margin-inline-start: 7px;
     background: transparent;
-    color: maroon;
+    color: #4870e9;
     text-decoration: underline;
     font-weight: bold;
+    font-size: 105%;
   }
+  a:hover {
+    color: black;
+    background: #87CEFA;
+    text-decoration: none;
+  }
+  a:active {
+    background: yellowgreen ;
+  }
+
+  img {
+    margin:13px;
+  }
+  
+
   h1 {
-    color: maroon;
-    font-size: 150%;
+    margin: 10px;
+    color: #229b95;
+    font-size: 170%;
     font-style: italic;
     display: block;
-    width: 100%;
-    border-bottom: 1px solid DarkSlateGrey;
+    width: 99%;
+    border-collapse: collapse;
   }
   h1.title {
     margin: 0 0 1em;
     padding: 10px;
     background-color: orange;
     color: white;
-    border-bottom: 4px solid gold;
+    border-bottom: 10px solid gold;
     font-size: 2em;
     font-style: normal;
   }
+  h2, h3 {
+    margin-inline-start: 7px;
+  }
+
+
+
   table#travels {
     margin: 10px;
     border-collapse: collapse;
-    width: 100%;
+    width: 99%;
     border-bottom: 2px solid black;
   }
   table#travels th {
     border: 2px solid white;
     font-weight: bold;
-    background-color: wheat;
+    background-color: #B0E0E6;
   }
   table#travels th, table#travels td {
     padding: 4px;
@@ -71,13 +95,13 @@ html, body {
   table#users {
     margin: 10px;
     border-collapse: collapse;
-    width: 100%;
+    width: 99%;
     border-bottom: 2px solid black;
   }
   table#users th {
     border: 2px solid white;
     font-weight: bold;
-    background-color: wheat;
+    background-color: #B0E0E6;
   }
   table#users th, table#users td {
     padding: 4px;
@@ -86,26 +110,73 @@ html, body {
   table#joinedtravels {
     margin: 10px;
     border-collapse: collapse;
-    width: 100%;
+    width: 99%;
     border-bottom: 2px solid black;
   }
   table#joinedtravels th {
     border: 2px solid white;
     font-weight: bold;
-    background-color: wheat;
+    background-color: #B0E0E6;
   }
   table#joinedtravels th, table#joinedtravels td {
     padding: 4px;
     text-align: left;
   }
+
+
   #notice, #warning {
     background: rosybrown;
     margin: 1em 0;
     padding: 4px;
   }
   form label {
+    margin-inline-start: 3px;
+    /* width: 110%; */
     display: block;
     line-height: 25px;
+    font-size: 15px;
+    /* width: 30px; */
     font-weight: bold;
-    color: maroon;
+    color: #4169E1;
+  }
+  input{
+    margin-inline-start: 7px;
+    border-width: 1px;
+    border-style: solid;
+  }
+  input[type=text] {
+    /* border-color: lightgray; */
+    width: 12vmax;
+  }
+  input[type=date], input[type=time] {
+    border-color: lightgray;
+    width: 7vmax;
+  } 
+  input[type=number] {
+    border-color: lightgray;
+    width: 3vmax;
+  }
+  input[type=email], input[type=tel], input[type=file] {
+    height: 25px;
+    border-color: lightgray;
+    border-radius: 4;
+    width: 12%;
+  }
+  input[type=password] {
+    border-color: lightgray;
+    width: 12%;
+  }
+  input[type=submit] {
+    height: 25px;
+    font-size: 110%;
+  }
+  select {
+    margin-inline-start: 7px;
+    font-size: 110%;
+  }
+  li {
+    font-size: 110%;
+  }
+  div {
+    margin-inline-start: 7px;
   }

@@ -1,5 +1,5 @@
 %h1 I miei Viaggi
-
+%br
 %h2 Viaggi da recensire
 %table#travels
 	%thead
@@ -26,6 +26,7 @@
 				%td= button_to "Lascia una recensione", reviews_path(travel), :method => :get
 
 
+%br
 
 %h2 Viaggi programmati
 %table#travels
@@ -51,6 +52,7 @@
 				%td= link_to ("Dettagli Viaggio"), travel_path(travel) 
 				%td= button_to ("Rimuovi prenotazione"), joinedtravel_path(travel), :data => {:confirm => "Vuoi rimovere la prenotazione da questo viaggio?"}, :method => :delete
 
+%br
 %h2 Viaggi creati
 %table#travels
 	%thead

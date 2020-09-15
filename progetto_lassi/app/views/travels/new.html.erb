@@ -4,22 +4,24 @@
 
 <h2>Crea un nuovo viaggio</h2>
 <%= form_tag travels_path, :method => :post do %>
-   <%= label :autocomplete_Adress, 'Partenza *' %>
+   <%= label :autocomplete_Adress, 'Partenza*' %>
   <%= text_field :address, :partenza, id: "autocomplete_address", :required => true %>
   <br/>
   <br/>
-  <%= label :autocomplete_Adress, 'Destinazione *' %>
+  <%= label :autocomplete_Adress, 'Destinazione*' %>
   <%= text_field :address, :arrivo, id: "autocomplete_address2", :required => true %>
   <br/>
   <br/>
-  <%= label :travel, :data, 'Data *' %>
+  <%= label :travel, :data, 'Data*' %>
   <%= date_field :travel, :data, :required => true,  min: Date.today.tomorrow %>
-  <%= label :travel, :ora_partenza, 'Orario partenza *' %>
+  <br>
+  <br>
+  <%= label :travel, :ora_partenza, 'Orario partenza*' %>
   <%= time_field :travel, :ora_partenza, :required => true %>
   <br/>
   <br/>
   <br/>
-  <%= label :travel, :prezzo, 'Prezzo(€) *' %>
+  <%= label :travel, :prezzo, 'Prezzo(€)*' %>
   <%= number_field :travel, :prezzo, :required => true %>
   <br/>
   <br/>
@@ -30,3 +32,8 @@
   <br/>
   <td>*Campi obbligatori</td>
 <% end %>
+<br/>
+</br>
+<td>
+  <%= link_to "Torna alla homepage", root_path() %>
+</td>

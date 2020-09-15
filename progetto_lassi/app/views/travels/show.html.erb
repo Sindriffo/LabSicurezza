@@ -27,7 +27,7 @@
   </li>
   <li>
     <strong>Prezzo:</strong>
-    <%= @travel.prezzo %>
+    <%= @travel.prezzo.to_s + "€"%>
   </li>
   <li>
     <strong>Numero posti disponibili:</strong>
@@ -64,7 +64,7 @@
   ];
   L.polyline(latlngs).addTo(map);
 
-  map.fitBounds(group.getBounds());
+  map.fitBounds(group.getBounds(), {maxZoom: 7});
 </script>
 
 
@@ -97,5 +97,5 @@
   <% end %>
 </ul>
 <td>
-  <%= link_to "Torna ai viaggi", travels_path() %>
+  <%= link_to "Torna indietro", :back %>
 </td>

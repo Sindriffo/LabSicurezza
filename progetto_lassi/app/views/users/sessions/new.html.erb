@@ -15,8 +15,8 @@
   <% if devise_mapping.rememberable? %>
     <div class="field">
       <br>
-      <%= f.check_box :remember_me %>    
-      <%= f.label :Resta_connesso %>
+      <%= f.check_box :remember_me %>Resta connesso<br>    
+      <%# <%= f.label :Resta_connesso %>
     </div>
   <% end %>
 
@@ -27,6 +27,7 @@
   </div>
 <% end %>
 
+<br>
 <%= render "users/shared/links" %>
 
 <br>

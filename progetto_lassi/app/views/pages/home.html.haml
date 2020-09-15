@@ -4,7 +4,7 @@
 	-else
 		%h1= "Pagina dell'Admin " + current_user.nome.to_s + " " + current_user.cognome.to_s
 
-	%table#travels
+	%table
 		%tbody
 			%tr
 				%td= link_to ("Lista utenti"), users_path
@@ -21,8 +21,9 @@
 - else
 	%h1= 'Pagina di ' + current_user.nome.to_s + " " + current_user.cognome.to_s
 
-	%table#travels
+	%table
 		%tbody
+			%br
 			%tr
 				%td= link_to ("Profilo"), current_user
 			%tr

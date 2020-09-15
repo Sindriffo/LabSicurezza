@@ -2,7 +2,7 @@
     <%= javascript_include_tag 'application' %>
 </head>
 
-<h2>Crea un nuovo viaggio</h2>
+<h2>Cerca un viaggio</h2>
 <%= form_tag finds_path, :method => :post do %>
   <%= label :autocomplete_Adress, 'Partenza' %>
   <%= text_field :address, :partenza, id: "autocomplete_address" %>
@@ -20,3 +20,8 @@
   <br/>
   <br/>
 <% end %>
+<br/>
+<br/>
+<td>
+  <%= link_to "Torna alla homepage", root_path() %>
+</td>
