@@ -8,7 +8,7 @@ class FindsController < ApplicationController
 
 
         @joinedtravels = Travel.joins(:joinedtravels).where('joinedtravels.user_id == ?', current_user.id)
-        @travels = Travel.where('travels.user_id != ?', current_user.id).where('travels.posti_disponibili > ?', 0)
+        @travels = Travel.where('travels.user_id != ?', current_user.id).where('travels.posti_disponibili > ?', 0).where('travels.data >= ?', DateTime.tomorrow)
 
         
         # render html: @travels
