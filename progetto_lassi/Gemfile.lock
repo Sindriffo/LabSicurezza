@@ -214,8 +214,10 @@ GEM
       thor
       thread_safe
     public_suffix (4.0.5)
-    puma (3.12.6)
-    puma (3.12.6-java)
+    puma (4.3.9)
+      nio4r (~> 2.0)
+    puma (4.3.9-java)
+      nio4r (~> 2.0)
     rack (2.2.2)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -360,7 +362,7 @@ DEPENDENCIES
   mini_magick
   omniauth-facebook
   open_street_map
-  puma (~> 3.7)
+  puma (~> 4.3)
   rails (~> 5.1.7)
   rails-controller-testing
   rspec-rails
